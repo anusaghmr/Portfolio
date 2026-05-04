@@ -140,6 +140,23 @@ nav a:hover {
     margin-top: 1rem;
 }
 
+.chat-button-2 {
+    background: #faf0ea;
+    color: #c07a5b;
+    border: 2px solid #c07a5b;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(192, 122, 91, 0.2);
+    margin-top: 0rem;
+}
+
 .chat-button:hover {
     background: #a85e4a;
     transform: translateY(-2px);
@@ -390,6 +407,48 @@ nav a:hover {
     color: #3e3e3e;
 }
 
+/* Bottom CTA */
+.bottom-cta {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #faf0ea, #f5e6df);
+    border-radius: 32px;
+    text-align: center;
+}
+
+.bottom-cta h3 {
+    font-size: 2rem;
+    color: #c07a5b;
+    margin-bottom: 1rem;
+}
+
+.bottom-cta p {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+.cta-button {
+    background: #c07a5b;
+    color: white;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(192,122,91,0.3);
+}
+
+.cta-button:hover {
+    background: #a85e4a;
+    transform: translateY(-2px);
+}
+
 /* Blog grid */
 .example-grid {
     display: grid;
@@ -514,14 +573,14 @@ nav a:hover {
 }
 
 .nav-dots .dot.active-star i {
-    color: #e098c8f3;
+    color: #db406c;
     font-size: 1.7rem;
     text-shadow: 0 0 10px rgba(181, 83, 154, 0.3);
 }
 
 .nav-dots .dot:hover i {
     transform: scale(1.2);
-    color: #e098c8f3;
+    color: #db406c;
 }
 
 /* Navigation with star indicator */

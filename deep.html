@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANUSHA GHIMIRE</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #faf7f5;
+            color: #2d2d2d;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ------ HEADER ------ */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #c07a5b;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo span {
+            color: #b5539a;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            position: relative;
+            text-decoration: none;
+            color: #2d2d2d;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            padding-bottom: 5px;
+        }
+
+        .nav-item:hover {
+            color: #c07a5b;
+        }
+
+        .nav-star {
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            font-size: 0.9rem;
+            animation: whiteShine 1.5s infinite ease-in-out;
+            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px rgba(255,255,255,0.8);
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.9));
+            pointer-events: none;
+        }
+
+        .nav-item.active-nav .nav-star {
+            opacity: 1;
+        }
+
+        @keyframes whiteShine {
+            0% {
+                text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px rgba(255,255,255,0.7);
+                transform: translateX(-50%) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px rgba(255,255,255,0.9);
+                transform: translateX(-50%) scale(1.3);
+                opacity: 1;
+            }
+            100% {
+                text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px rgba(255,255,255,0.7);
+                transform: translateX(-50%) scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        /* page section visibility */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active-section {
+            display: block;
+        }
+
+        /* ------ HOME specific grid ------ */
+        .home-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 70vh;
+        }
+
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            color: #c07a5b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .main-name {
+            font-size: clamp(4rem, 8vw, 6rem);
+            font-weight: 600;
+            line-height: 1;
+            margin: 0.5rem 0;
+            background: linear-gradient(135deg, #c07a5b, #b5539a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin: 1rem 0;
+            color: #2d2d2d;
+        }
+
+        .description span {
+            color: #c07a5b;
+            font-style: italic;
+        }
+
+        .chat-button {
+            background: #c07a5b;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(192,122,91,0.2);
+            margin-top: 1rem;
+        }
+
+        .chat-button:hover {
+            background: #a85e4a;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(192,122,91,0.3);
+        }
+
+        .about-button {
+            background: none;
+            border: 2px solid #c07a5b;
+            color: #c07a5b;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .about-button:hover {
+            background: #c07a5b20;
+            transform: translateY(-2px);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .right-side {
+            position: relative;
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+            overflow: hidden;
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.3);
+            animation: morphShape 8s ease-in-out infinite;
+        }
+
+        @keyframes morphShape {
+            0%, 100% { border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%; }
+            25% { border-radius: 40% 60% 70% 30% / 40% 60% 40% 60%; }
+            50% { border-radius: 60% 40% 50% 50% / 30% 70% 30% 70%; }
+            75% { border-radius: 30% 70% 40% 60% / 70% 30% 70% 30%; }
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .decorative-dots {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #c07a5b20 2px, transparent 2px);
+            background-size: 20px 20px;
+            z-index: -1;
+            animation: rotateSlow 30s linear infinite;
+        }
+
+        .decorative-lines {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: repeating-linear-gradient(45deg, #b5539a20 0px, #b5539a20 5px, transparent 5px, transparent 15px);
+            z-index: -1;
+            animation: moveLines 20s linear infinite;
+        }
+
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes moveLines {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 20px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .nav-dots {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .nav-dots .dot {
+            width: auto;
+            height: auto;
+            background: none;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-dots .dot i {
+            font-size: 1rem;
+            color: #c07a5b40;
+            transition: all 0.3s ease;
+        }
+
+        /* FOLLOW SECTION (common bottom) */
+        .footer-section {
+            margin-top: 4rem;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-column h4 {
+            color: #c07a5b;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #2d2d2d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: #c07a5b;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            color: #2d2d2d;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #c07a5b;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* Bottom CTA */
+        .bottom-cta {
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #faf0ea, #f5e6df);
+            border-radius: 32px;
+            text-align: center;
+        }
+
+        .bottom-cta h3 {
+            font-size: 2rem;
+            color: #c07a5b;
+            margin-bottom: 1rem;
+        }
+
+        .bottom-cta p {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-button {
+            background: #c07a5b;
+            color: white;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(192,122,91,0.3);
+        }
+
+        .cta-button:hover {
+            background: #a85e4a;
+            transform: translateY(-2px);
+        }
+
+        /* Blog grid */
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .example-item {
+            background: #faf0ea;
+            padding: 1.8rem 1.5rem;
+            border-radius: 24px;
+            text-align: left;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            height: fit-content;
+        }
+
+        .example-item i {
+            font-size: 2.5rem;
+            color: #c07a5b;
+            margin-bottom: 0.5rem;
+        }
+
+        .example-item span {
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Blog post content with truncation */
+        .blog-content {
+            position: relative;
+        }
+        
+        .blog-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #3e3e3e;
+            max-width: 100%;
+            white-space: normal;
+            word-break: break-word;
+        }
+        
+        .blog-text.truncated {
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .see-more-btn {
+            background: none;
+            border: none;
+            color: #c07a5b;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 0.5rem 0 0 0;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+            display: inline-block;
+        }
+        
+        .see-more-btn:hover {
+            color: #a85e4a;
+        }
+
+        .shining-star {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 1rem;
+            color: #e0e0e0;
+            animation: starGlow 2s infinite ease-in-out;
+        }
+
+        @keyframes starGlow {
+            0% { opacity: 0.6; text-shadow: 0 0 3px rgba(255,255,255,0.5); transform: scale(1); }
+            50% { opacity: 1; text-shadow: 0 0 10px white, 0 0 15px rgba(255,255,255,0.8); transform: scale(1.15); }
+            100% { opacity: 0.6; text-shadow: 0 0 3px rgba(255,255,255,0.5); transform: scale(1); }
+        }
+
+        /* page sections */
+        .page-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        .page-card h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #c07a5b;
+            margin-bottom: 1.5rem;
+        }
+        .page-card h2 i {
+            margin-right: 1rem;
+            color: #b5539a;
+        }
+        .page-card p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            color: #3e3e3e;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 800px) {
+            .home-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .home-extras {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="logo" onclick="showSection('home')">AG<span>.</span></div>
+            <nav>
+                <a onclick="showSection('blog')" class="nav-item" id="nav-blog">
+                    My Blog
+                    <span class="nav-star">⭐</span>
+                </a>
+                <a onclick="showSection('about')" class="nav-item" id="nav-about">
+                    About
+                    <span class="nav-star">⭐</span>
+                </a>
+                <a onclick="showSection('moments')" class="nav-item" id="nav-moments">
+                    Moments
+                    <span class="nav-star">⭐</span>
+                </a>
+                <a onclick="showSection('find')" class="nav-item" id="nav-find">
+                    Find Me
+                    <span class="nav-star">⭐</span>
+                </a>
+                <a onclick="showSection('resume')" class="nav-item" id="nav-resume">
+                    Resume
+                    <span class="nav-star">⭐</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- ************** HOME SECTION ************** -->
+        <div id="home" class="page-section active-section">
+            <div class="home-grid">
+                <div class="left-side">
+                    <div class="greeting">Heyy!!</div>
+                    <h1 class="main-name">A N U S H A</h1>
+                    <div class="description">
+                        A <span>little</span> corner <span>of the </span>Internet<br>
+                        <span>that</span> is <span>completely ME </span>!!
+                    </div>
+                    <div class="button-group">
+                        <button class="chat-button" onclick="showSection('find')">Get In Touch!</button>
+                        <button class="about-button" onclick="showSection('about')">About Me →</button>
+                    </div>
+                    <div class="nav-dots">
+                        <span class="dot"><i class="fas fa-star"></i></span>
+                        <span class="dot"><i class="fas fa-star"></i></span>
+                        <span class="dot"><i class="fas fa-star"></i></span>
+                        <span class="dot"><i class="fas fa-star"></i></span>
+                        <span class="dot"><i class="fas fa-star"></i></span>
+                    </div>                
+                </div>
+                <div class="right-side">
+                    <div class="photo-frame">
+                        <img src="images/IMG-20260102-WA0035.jpg" alt="Anusha" onerror="this.src='https://via.placeholder.com/600x600?text=ANUSHA'">
+                    </div>
+                    <div class="decorative-dots"></div>
+                    <div class="decorative-lines"></div>
+                </div>
+            </div>
+
+            <div class="home-extras">
+                <div class="extra-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI experiments</h3>
+                    <p>I play with local LLMs, computer vision & weird generators.</p>
+                    <div class="tag">new: GPT‑5 notes</div>
+                    <ul class="mini-list">
+                        <li><i class="fas fa-cloud"></i> fine‑tuning diary</li>
+                        <li><i class="fas fa-image"></i> stable diffusion tips</li>
+                    </ul>
+                </div>
+                <div class="extra-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Tech vlogs</h3>
+                    <p>Unboxings, dev setups, and coding music while I work.</p>
+                    <div class="tag">popular</div>
+                    <ul class="mini-list">
+                        <li><i class="fas fa-mobile-alt"></i> my home office</li>
+                        <li><i class="fas fa-keyboard"></i> mechanical keys</li>
+                    </ul>
+                </div>
+                <div class="extra-card">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>life archives</h3>
+                    <p>Travel diaries, coffee chats, and messy real moments.</p>
+                    <div class="tag">vlogmas</div>
+                    <ul class="mini-list">
+                        <li><i class="fas fa-umbrella-beach"></i> bali retreat</li>
+                        <li><i class="fas fa-mug-hot"></i> 6am routines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ************** MY BLOG SECTION ************** -->
+        <div id="blog" class="page-section">
+            <div class="page-card">
+                <h2><i class="fas fa-book-open"></i> My Blog</h2>
+                <p style="font-style:normal; color: #000000; margin-bottom: 2rem;">Brain Dump💡</p>
+                
+                <div class="example-grid" id="medium-posts-container">
+                    <!-- Posts loaded dynamically -->
+                </div>
+                
+                <div style="display: flex; justify-content: center; margin-top: 3rem; margin-bottom: 1.5rem;">
+                    <a href="https://medium.com/@anusaghmr" target="_blank" style="background: none; border: 2px solid #c07a5b; color: #c07a5b; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s;" onmouseover="this.style.background='#c07a5b'; this.style.color='white'" onmouseout="this.style.background='none'; this.style.color='#c07a5b'">
+                        <i class="fab fa-medium"></i> See More Blogs on Medium
+                    </a>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center; padding-top: 1.5rem; border-top: 1px dashed rgba(192,122,91,0.3);">
+                    <p style="font-style: italic; color: #b5539a; font-size: 1rem; text-align: center; margin: 0;">always the poet, never the poem...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ************** ABOUT SECTION ************** -->
+        <div id="about" class="page-section">
+            <div class="page-card">
+                <h2><i class="fas fa-user"></i> About Me</h2>
+                <p>I'm Anusha — an AI student, storyteller, and creative soul navigating the intersection of technology and expression. Currently pursuing BSc (Hons) Computer Science with Artificial Intelligence at Sunway College Kathmandu, I'm deeply curious about how machines learn and how humans connect.</p>
+                <br>
+                <p>Beyond the code, I'm a cinephile who finds poetry in cinema, a writer who believes words carry magic, and a dreamer who builds little corners of the internet that feel like home. My journey is about blending logic with imagination, data with drama, and algorithms with art.</p>
+                <br>
+                <p>I love hosting events, creating content, voiceover work, and sharing stories that matter. Whether it's through a blog post, a video, or a conversation — I'm here to create, collaborate, and grow.</p>
+                <br>
+                <p>Let's build something beautiful together.</p>
+            </div>
+        </div>
+
+        <!-- ************** MOMENTS SECTION ************** -->
+        <div id="moments" class="page-section">
+            <div class="page-card">
+                <h2><i class="fas fa-camera-retro"></i> Moments</h2>
+                <p style="font-style: italic; color: #b5539a; margin-bottom: 2rem;">events i've been part of</p>
+                
+                <div style="margin-bottom: 3rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                        <span style="background: #c07a5b; width: 10px; height: 10px; border-radius: 50%;"></span>
+                        <h3 style="color: #c07a5b; margin: 0;">🏆 ICT Awards 2025</h3>
+                        <span style="background: #f0e4de; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Content Creator</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                        <img src="images/ict1.jpg" alt="ICT Awards" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+1'">
+                        <img src="images/ict2.jpg" alt="ICT Awards" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+2'">
+                        <img src="images/ict3.jpg" alt="ICT Awards" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+3'">
+                    </div>
+                    <p style="margin-top: 0.8rem; color: #888; font-style: italic;">capturing moments, behind the scenes, and the award night ✨</p>
+                </div>
+                
+                <div style="margin-bottom: 3rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                        <span style="background: #c07a5b; width: 10px; height: 10px; border-radius: 50%;"></span>
+                        <h3 style="color: #c07a5b; margin: 0;">🚀 Sunway Startup and Idea Fest 2025</h3>
+                        <span style="background: #f0e4de; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Content Creator</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                        <img src="images/startup1.jpg" alt="Startup Fest" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+1'">
+                        <img src="images/startup2.jpg" alt="Startup Fest" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+2'">
+                        <img src="images/startup3.jpg" alt="Startup Fest" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+3'">
+                    </div>
+                    <p style="margin-top: 0.8rem; color: #888; font-style: italic;">from setup to spotlight — capturing the startup energy 🚀</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                        <span style="background: #c07a5b; width: 10px; height: 10px; border-radius: 50%;"></span>
+                        <h3 style="color: #c07a5b; margin: 0;">💰 Nepal FinTech Expo 2026</h3>
+                        <span style="background: #f0e4de; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem;">Digital Coverage</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                        <img src="images/fintech1.jpg" alt="FinTech Expo" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+1'">
+                        <img src="images/fintech2.jpg" alt="FinTech Expo" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+2'">
+                        <img src="images/fintech3.jpg" alt="FinTech Expo" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px;" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+3'">
+                    </div>
+                    <p style="margin-top: 0.8rem; color: #888; font-style: italic;">live updates, interviews, and fintech vibes 💰</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ************** FIND ME SECTION ************** -->
+        <div id="find" class="page-section">
+            <div class="page-card">
+                <h2><i class="fas fa-hashtag"></i> Find Me</h2>
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.3rem;">I'd love to hear from you... 💬</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+                    <div>
+                        <h3 style="color: #c07a5b; margin-bottom: 1.5rem; font-size: 1.5rem;">Get in Touch</h3>
+                        <p>I am mostly active on LinkedIn.</p>                      
+                        <div style="margin-bottom: 2rem;">
+                            <div style="display: flex; gap: 1.5rem; font-size: 2rem; color: #c07a5b;">
+                                <a href="https://linkedin.com/in/anusaghmr" target="_blank" style="color: inherit;"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/anusaghmr" target="_blank" style="color: inherit;"><i class="fab fa-github"></i></a>
+                                <a href="https://medium.com/@anusaghmr" target="_blank" style="color: inherit;"><i class="fab fa-medium"></i></a>
+                                <a href="mailto:heyyanusha@gmail.com" style="color: inherit;"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div style="background: #faf0ea; padding: 1.5rem; border-radius: 16px;">
+                            <p style="font-weight: 600; color: #c07a5b;">📍 Based in</p>
+                            <p>Gaushala, Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: #c07a5b; margin-bottom: 1.5rem; font-size: 1.5rem;">Send a Message</h3>
+                        <form id="contactForm" onsubmit="handleSubmit(event)">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.3rem; font-weight: 500;">First Name *</label>
+                                    <input type="text" id="firstName" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.3rem; font-weight: 500;">Last Name *</label>
+                                    <input type="text" id="lastName" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <label style="display: block; margin-bottom: 0.3rem; font-weight: 500;">Email *</label>
+                                <input type="email" id="email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.3rem; font-weight: 500;">Message *</label>
+                                <textarea id="message" required rows="5" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; resize: vertical;"></textarea>
+                            </div>
+                            <button type="submit" style="background: #c07a5b; color: white; border: none; padding: 1rem 2rem; font-size: 1rem; font-weight: 600; border-radius: 50px; cursor: pointer; width: 100%; transition: all 0.3s;">
+                                Send Message
+                            </button>
+                            <div id="formStatus" style="margin-top: 1rem; text-align: center; display: none; padding: 0.8rem; border-radius: 8px;"></div>
+                        </form>
+                        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #888;">
+                            * For urgent matters: <a href="mailto:heyyanusha@gmail.com" style="color: #c07a5b;">heyyanusha@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ************** RESUME SECTION ************** -->
+        <div id="resume" class="page-section">
+            <div class="page-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 600; color: #c07a5b; margin: 0;">
+                        <i class="fas fa-file-alt" style="margin-right: 1rem;"></i> Resume
+                    </h2>
+                    <a href="images/Anusha_Ghimire_CV.pdf" download style="background: #c07a5b; color: white; padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600;">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                    <div>
+                        <h1 style="font-size: 2.2rem;">Anusha Ghimire</h1>
+                        <p style="font-size: 1.2rem; color: #b5539a;">AI Student</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p><i class="fas fa-envelope"></i> heyyanusha@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Gaushala, Kathmandu</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 2rem; margin-bottom: 2rem; padding: 1rem 0; border-bottom: 1px solid #eee;">
+                    <a href="https://github.com/anusaghmr" target="_blank"><i class="fab fa-github"></i> github.com/@anusaghmr</a>
+                    <a href="https://linkedin.com/in/anusaghmr" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/@anusaghmr</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div><h3>Career Objective</h3><p>Enthusiastic learner aiming to blend technology, communication, and leadership.</p></div>
+                    <div><h3>Education</h3><p><strong>BSc CS with AI</strong> - Sunway College<br><strong>+2 Management</strong> - Elixir Academy</p></div>
+                    <div><h3>Experience</h3><p>Content Creator at Sunway College (2025–present)</p></div>
+                    <div><h3>Key Achievements</h3><ul><li>100% Scholarship</li><li>Certified Public Speaker</li><li>College Captain (2080-2082)</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ************** BOTTOM CTA (appears on all pages) ************** -->
+        <div class="bottom-cta">
+            <h3>✨ Let's Create Something ✨</h3>
+            <p>Got a project, a collaboration idea, or just want to say hi? I'm always open to new conversations and creative possibilities. Let's build something meaningful together.</p>
+            <button class="cta-button" onclick="showSection('find')">Start a Conversation →</button>
+        </div>
+
+        <!-- ************** ENHANCED FOOTER ************** -->
+        <div class="footer-section">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <a onclick="showSection('blog')">My Blog</a>
+                        <a onclick="showSection('about')">About</a>
+                        <a onclick="showSection('moments')">Moments</a>
+                        <a onclick="showSection('resume')">Resume</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a onclick="showSection('find')">Find Me</a>
+                        <a href="mailto:heyyanusha@gmail.com">Email</a>
+                        <a href="https://medium.com/@anusaghmr" target="_blank">Medium</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/anusaghmr" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/anusaghmr" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@anusaghmr" target="_blank"><i class="fab fa-medium"></i></a>
+                    <a href="mailto:heyyanusha@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 by Anusha Ghimire. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Medium posts data
+        const mediumPosts = [
+            {
+                title: "Love That Changed Me",
+                url: "https://medium.com/@anusaghmr/love-that-changed-me",
+                image: "https://miro.medium.com/v2/resize:fit:1400/1*placeholder.jpg",
+                excerpt: "I never thought I'd make excuses just to stay, never thought I'd let my guarded walls fall away...",
+                date: "Feb 19, 2025"
+            },
+            {
+                title: "The Woolen Sweater",
+                url: "https://medium.com/@anusaghmr/the-woolen-sweater",
+                image: "https://miro.medium.com/v2/resize:fit:1400/1*placeholder2.jpg",
+                excerpt: "Ful haru muskauxan, timile dekhxau ra?? Putali le geet gauxa, timile sunxau ra??",
+                date: "Jan 25, 2025"
+            },
+            {
+                title: "How AI Is Transforming Coffee",
+                url: "https://medium.com/@anusaghmr/how-ai-is-transforming-coffee",
+                image: "https://miro.medium.com/v2/resize:fit:1400/1*placeholder3.jpg",
+                excerpt: "Farm to cup, smarter: Have you ever held a warm cup of coffee and wondered about the journey...",
+                date: "Mar 10, 2025"
+            },
+            {
+                title: "The Intro",
+                url: "https://medium.com/@anusaghmr/the-intro",
+                image: "https://miro.medium.com/v2/resize:fit:1400/1*placeholder4.jpg",
+                excerpt: "Call me a cinephile, and you'll see the widest smile spread across my face...",
+                date: "Feb 5, 2025"
+            },
+            {
+                title: "My Watched List",
+                url: "https://medium.com/@anusaghmr/my-watched-list",
+                image: "https://miro.medium.com/v2/resize:fit:1400/1*placeholder5.jpg",
+                excerpt: "I've always had a habit of writing things down because I've never been good at remembering them...",
+                date: "Mar 1, 2025"
+            }
+        ];
+
+        function loadMediumPosts() {
+            const container = document.getElementById('medium-posts-container');
+            if (!container) return;
+            let html = '';
+            mediumPosts.forEach((post, index) => {
+                html += `
+                    <div class="example-item">
+                        <a href="${post.url}" target="_blank" style="text-decoration: none; color: inherit;">
+                            <div style="width:100%; height:180px; overflow:hidden; border-radius:16px; margin-bottom:1rem; background:#e0e0e0;">
+                                <img src="${post.image}" alt="${post.title}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x180?text=${post.title.replace(/ /g, '+')}'">
+                            </div>
+                            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+                                <span class="shining-star">⭐</span>
+                                <span style="font-weight:600; font-size:1.2rem; color:#c07a5b;">${post.title}</span>
+                            </div>
+                            <p style="color:#888; font-size:0.85rem;">${post.date}</p>
+                            <p style="color:#3e3e3e; font-size:0.9rem;">${post.excerpt}</p>
+                            <p style="color:#c07a5b; font-size:0.85rem; margin-top:0.5rem;">Read on Medium →</p>
+                        </a>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Page switching function
+        function showSection(sectionId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(sectionId).classList.add('active-section');
+            
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active-nav');
+            });
+            const activeNav = document.getElementById(`nav-${sectionId}`);
+            if (activeNav) {
+                activeNav.classList.add('active-nav');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Form handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            const statusDiv = document.getElementById('formStatus');
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#f0e4de';
+            statusDiv.style.color = '#c07a5b';
+            statusDiv.innerHTML = '⏱️ Sending...';
+            setTimeout(() => {
+                statusDiv.style.background = '#e0f0e0';
+                statusDiv.style.color = '#2d2d2d';
+                statusDiv.innerHTML = '✓ Message sent! (Demo mode)';
+                document.getElementById('contactForm').reset();
+            }, 1500);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMediumPosts();
+            const activeSection = document.querySelector('.page-section.active-section');
+            if (activeSection && activeSection.id !== 'home') {
+                const activeNav = document.getElementById(`nav-${activeSection.id}`);
+                if (activeNav) activeNav.classList.add('active-nav');
+            }
+        });
+    </script>
+</body>
+</html>
