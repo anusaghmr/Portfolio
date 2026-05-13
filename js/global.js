@@ -170,4 +170,49 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('notes.html')) fetchMediumPosts();
     if (window.location.pathname.includes('socials.html')) initContactForm();
     initFloatingPetals();
+    initFadeUpAnimations();
+});
+
+// Fade-up animations
+function initFadeUpAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+}
+
+const fadeElements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+fadeElements.forEach((element) => {
+    observer.observe(element);
+});
+
+
+const button = document.getElementById('messageBtn');
+
+button.addEventListener('click', () => {
+    button.innerText = 'Thanks for being here.';
+
+    setTimeout(() => {
+        button.innerText = 'Say Hello';
+    },2500);
 });
