@@ -1,0 +1,80 @@
+.highlights-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.highlights-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #c07a5b;
+    margin: 0;
+}
+.highlights-header h2 i { margin-right: 1rem; color: #b5539a; }
+
+.download-btn {
+    background: #c07a5b;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.download-btn:hover { background: #a85e4a; }
+
+.resume-name { margin-bottom: 0.5rem; }
+.resume-name h1 { font-size: 2.2rem; color: #2d2d2d; margin: 0; }
+.resume-name p { font-size: 1.2rem; color: #b5539a; }
+
+.resume-contact {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.resume-contact p { margin: 0; }
+.resume-contact i { color: #c07a5b; width: 20px; }
+
+.resume-social {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+.resume-social a { color: #2d2d2d; text-decoration: none; }
+.resume-social i { color: #c07a5b; width: 20px; }
+
+.resume-section { margin-bottom: 2rem; }
+.resume-section h3 {
+    color: #c07a5b;
+    border-bottom: 2px solid #c07a5b;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.resume-section .title { font-weight: 600; }
+.resume-section .meta { color: #b5539a; margin-bottom: 0.5rem; }
+.resume-section ul { margin-left: 1.5rem; color: #3e3e3e; }
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-tags span {
+    background: #f0e4de;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.lang-row { display: flex; gap: 2rem; flex-wrap: wrap; }
+.feature-tags { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.8rem; }
+.feature-tags span {
+    background: #f0e4de;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}

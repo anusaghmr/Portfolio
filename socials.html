@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anushaaaa · Socials</title>
+    <link rel="icon" type="image/png" href="assets/images/AGlogo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/core.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo" onclick="window.location.href = 'index.html'">
+          Ms<span> A.</span>
+        </div>
+        <nav>
+          <a href="notes.html" class="nav-item"
+            ><span class="initial">N</span>otes</a
+          >
+          <a href="unfiltered.html" class="nav-item"
+            ><span class="initial">U</span>nfiltered</a
+          >
+          <a href="socials.html" class="nav-item active-nav"
+            ><span class="initial">S</span>ocials</a
+          >
+          <a href="highlights.html" class="nav-item"
+            ><span class="initial">H</span>ighlights</a
+          >
+          <a href="about.html" class="nav-item"
+            ><span class="initial">A</span>bout</a
+          >
+        </nav>
+      </header>
+
+      <div class="page-card">
+        <h2><i class="fas fa-hashtag"></i> Socials</h2>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.3rem">
+          I'd love to hear from you... 💬
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem">
+          <div>
+            <h3 style="color: #c07a5b; margin-bottom: 1.5rem">Get in Touch</h3>
+            <p>I am mostly active on LinkedIn.</p>
+            <div style="margin-bottom: 2rem">
+              <div
+                style="
+                  display: flex;
+                  gap: 1.5rem;
+                  font-size: 2rem;
+                  color: #c07a5b;
+                "
+              >
+                <a href="https://github.com/anusaghmr" target="_blank"
+                  ><i class="fab fa-github" style="color: #c07a5b"></i
+                ></a>
+                <a href="https://linkedin.com/in/anusaghmr" target="_blank"
+                  ><i class="fab fa-linkedin" style="color: #c07a5b"></i
+                ></a>
+                <a href="https://medium.com/@anusaghmr" target="_blank"
+                  ><i class="fab fa-medium" style="color: #c07a5b"></i
+                ></a>
+                <a href="mailto:heyyanusha@gmail.com"
+                  ><i class="fas fa-envelope" style="color: #c07a5b"></i
+                ></a>
+              </div>
+            </div>
+            <div
+              style="background: #faf0ea; padding: 1.5rem; border-radius: 16px"
+            >
+              <p style="font-weight: 600; color: #c07a5b">📍 Based in</p>
+              <p>Gaushala, Kathmandu, Nepal</p>
+            </div>
+          </div>
+          <div>
+            <h3 style="color: #c07a5b; margin-bottom: 1.5rem">
+              Send a Message
+            </h3>
+            <form id="contactForm">
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 1rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div>
+                  <label>First Name *</label
+                  ><input type="text" id="firstName" required />
+                </div>
+                <div>
+                  <label>Last Name *</label
+                  ><input type="text" id="lastName" required />
+                </div>
+              </div>
+              <div style="margin-bottom: 1rem">
+                <label>Email *</label><input type="email" id="email" required />
+              </div>
+              <div style="margin-bottom: 1.5rem">
+                <label>Message *</label
+                ><textarea id="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+              <div
+                id="formStatus"
+                style="margin-top: 1rem; display: none"
+              ></div>
+            </form>
+            <p
+              style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem"
+            >
+              * For urgent matters:
+              <a href="mailto:anushaghimire00@gmail.com"
+                >anushaghimire00@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+          "
+        >
+          © 2025 by Anusha Ghimire. All rights reserved.
+        </div>
+      </div>
+
+      <div class="bottom-cta">
+        <h3>✨ Let's Create Something ✨</h3>
+        <p>Let's build something meaningful together.</p>
+        <button
+          class="cta-button"
+          onclick="window.location.href = 'socials.html'"
+        >
+          Start a Conversation →
+        </button>
+      </div>
+      <div class="follow-section">
+        <div class="follow-text">find me</div>
+        <div class="social-icons">
+          <a href="mailto:heyyanusha@gmail.com"
+            ><i class="fas fa-envelope" style="color: #c07a5b"></i></a
+          ><a href="https://github.com/anusaghmr" target="_blank"
+            ><i class="fab fa-github" style="color: #c07a5b"></i></a
+          ><a href="https://linkedin.com/in/anusaghmr" target="_blank"
+            ><i class="fab fa-linkedin" style="color: #c07a5b"></i></a
+          ><a href="https://medium.com/@anusaghmr" target="_blank"
+            ><i class="fa-brands fa-medium" style="color: #c07a5b"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <script src="js/global.js"></script>
+    <script>
+      initContactForm();
+    </script>
+  </body>
+</html>
