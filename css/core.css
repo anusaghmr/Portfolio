@@ -526,14 +526,6 @@ html{
     scroll-behavior:smooth;
 }
 
-/* body{
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #fdf6f0;
-    color: #2d2d2d;
-    line-height: 1.5;
-    overflow-x:hidden;
-} */
-
 ::selection{
     background:#1f1f1f;
     color:#f7f3ef;
@@ -661,6 +653,44 @@ html{
     color:white;
     position:relative;
     overflow:hidden;
+}
+.photo-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.photo-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 3/4;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(192, 122, 91, 0.1);
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-wrapper:hover img {
+    transform: scale(1.02);
+}
+.img-container{
+    position:static;
+    width:80px;
+    height:80px;
+    border-radius:0;
+    overflow:hidden;
+    top:-40px;
+    left:50%;
+    transform:translateX(-50%);
 }
 
 .quote-section::after{
