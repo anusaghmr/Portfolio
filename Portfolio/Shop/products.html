@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wholesale Catalog - Baidik Puja Samagri Pasal</title>
+    <meta
+      name="description"
+      content="Browse our wholesale spiritual items catalog. Includes puja samagri, brass murtis, dry incense dhoop, rudraksha malas, and festival essentials. Contact for pricing."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo-wrapper">
+          <div class="logo-icon">
+            <i class="fa-solid fa-om"></i>
+          </div>
+          <div class="logo-text">
+            <h1>Baidik Puja</h1>
+            <p>Samagri Pasal</p>
+          </div>
+        </a>
+
+        <nav class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="products.html" class="nav-link active">Products</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+
+          <!-- Diya Dark Mode Toggle -->
+          <button
+            class="dark-mode-toggle"
+            aria-label="Toggle Theme"
+            type="button"
+          >
+            <svg class="diya-icon" viewBox="0 0 50 50">
+              <path
+                class="diya-flame"
+                d="M25,5 C25,5 31,13 31,17 C31,21 28,24 25,24 C22,24 19,21 19,17 C19,13 25,5 25,5 Z"
+              />
+              <path
+                class="diya-bowl"
+                d="M10,25 C10,34 16,38 25,38 C34,38 40,34 40,25 C40,24 38,24 36,26 C33,29 29,30 25,30 C21,30 17,29 14,26 C12,24 10,24 10,25 Z"
+              />
+              <path
+                class="diya-base"
+                d="M20,38 C20,38 22,42 25,42 C28,42 30,38 30,38 Z"
+              />
+            </svg>
+          </button>
+
+          <a href="contact.html" class="nav-cta">Wholesale Query</a>
+        </nav>
+
+        <button class="burger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Products Banner -->
+    <section
+      class="about-hero"
+      style="
+        background-image:
+          linear-gradient(rgba(107, 0, 0, 0.8), rgba(107, 0, 0, 0.85)),
+          url(&quot;assets/images/cat_idols.png&quot;);
+      "
+    >
+      <div class="container" style="max-width: 800px">
+        <span class="section-subtitle" style="color: var(--gold)"
+          >Our Divine Collection</span
+        >
+        <h1 style="color: var(--white); font-size: 3rem">Wholesale Catalog</h1>
+        <p
+          style="
+            color: var(--cream);
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-top: 1rem;
+          "
+        >
+          Browse through our extensive catalog of genuine spiritual tools, brass
+          murtis, and sacred ingredients.
+        </p>
+      </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="section container">
+      <div class="products-wrapper" id="products-catalog">
+        <!-- Sidebar Filters -->
+        <aside class="filter-sidebar scroll-reveal">
+          <!-- Search Box -->
+          <div class="filter-section">
+            <h3 class="filter-title">Search Catalog</h3>
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Type to search items..."
+              />
+            </div>
+          </div>
+
+          <!-- Categories List -->
+          <div class="filter-section">
+            <h3 class="filter-title">Categories</h3>
+            <div class="category-list">
+              <button class="category-btn active" data-category="all">
+                <span>All Products</span>
+                <span class="count">0</span>
+              </button>
+              <button class="category-btn" data-category="puja-samagri">
+                <span>Puja Samagri</span>
+                <span class="count">0</span>
+              </button>
+              <button class="category-btn" data-category="idols">
+                <span>Idols & Statues</span>
+                <span class="count">0</span>
+              </button>
+              <button class="category-btn" data-category="incense">
+                <span>Incense & Dhoop</span>
+                <span class="count">0</span>
+              </button>
+              <button class="category-btn" data-category="rudraksha">
+                <span>Rudraksha & Malas</span>
+                <span class="count">0</span>
+              </button>
+              <button class="category-btn" data-category="decorative">
+                <span>Decorative Items</span>
+                <span class="count">0</span>
+              </button>
+              <button class="category-btn" data-category="festivals">
+                <span>Festival Essentials</span>
+                <span class="count">0</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Catalog Note -->
+          <div
+            class="filter-section"
+            style="
+              background-color: var(--cream);
+              padding: 1.25rem;
+              border-radius: 8px;
+              border-left: 3px solid var(--gold);
+            "
+          >
+            <h4
+              style="
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+                color: var(--secondary);
+              "
+            >
+              <i class="fa-solid fa-circle-info"></i> How to Order?
+            </h4>
+            <p
+              style="
+                font-size: 0.75rem;
+                color: var(--text-muted);
+                line-height: 1.5;
+                margin: 0;
+              "
+            >
+              We operate as a wholesale distributor. Tap the green WhatsApp
+              button on any item to instantly check price, MOQ (Minimum Order
+              Quantity), and bulk discounts.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Products Grid Display -->
+        <main class="products-display">
+          <div class="products-results-info scroll-reveal">
+            <span id="results-count">Showing 0 products</span>
+            <span
+              ><i class="fa-solid fa-lock"></i> Prices depends upon order
+              quantity
+            </span>
+          </div>
+
+          <div class="products-grid" id="products-grid">
+            <!-- Dynamically populated by JS -->
+          </div>
+
+          <!-- No Results state -->
+          <div class="no-results" id="no-results">
+            <i class="fa-regular fa-face-frown"></i>
+            <h3>No items matched your query</h3>
+            <p>
+              Try searching for general keywords like 'brass', 'diya',
+              'incense', or change your category filter.
+            </p>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="product-modal" aria-hidden="true">
+      <div class="product-modal-wrapper scroll-reveal">
+        <button class="product-modal-close" aria-label="Close product details">
+          &times;
+        </button>
+        <div class="product-modal-grid">
+          <div class="product-modal-gallery">
+            <img
+              id="modal-main-image"
+              class="product-modal-main-image"
+              src=""
+              alt="Product image"
+            />
+            <div id="modal-thumbs" class="product-modal-thumbs"></div>
+          </div>
+          <div class="product-modal-info">
+            <span class="product-cat-label" id="modal-category"></span>
+            <h2 id="modal-name"></h2>
+            <p class="modal-description" id="modal-description"></p>
+            <div class="product-modal-specs">
+              <div>
+                <strong>Material</strong><span id="modal-material"></span>
+              </div>
+              <div>
+                <strong>Sizes / Variants</strong
+                ><span id="modal-variants"></span>
+              </div>
+              <div>
+                <strong>Packaging</strong><span id="modal-packaging"></span>
+              </div>
+              <div><strong>MOQ</strong><span id="modal-moq"></span></div>
+              <div><strong>SKU</strong><span id="modal-sku"></span></div>
+            </div>
+            <div class="product-modal-section">
+              <h3>Significance</h3>
+              <p id="modal-significance"></p>
+            </div>
+            <div class="product-modal-section">
+              <h3>Ideal Uses</h3>
+              <ul id="modal-uses"></ul>
+            </div>
+            <div class="product-modal-section">
+              <h3>Customization</h3>
+              <p id="modal-customization"></p>
+            </div>
+            <div class="product-modal-actions">
+              <a
+                id="modal-request-price"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+                >Request Price</a
+              >
+              <a
+                id="modal-order-whatsapp"
+                class="btn btn-secondary"
+                target="_blank"
+                rel="noopener"
+                >Order on WhatsApp</a
+              >
+            </div>
+            <div class="product-modal-related">
+              <h3>Related Products</h3>
+              <div id="modal-related"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Banner Section -->
+    <section class="cta-banner scroll-reveal">
+      <div class="cta-container">
+        <h2>Need a Customized Catalog for your Store?</h2>
+        <p>
+          If you require specific weights, sizes, or custom packaging for
+          spiritual kits, let us know. We can curate catalog items tailored
+          exactly to your local market demographics.
+        </p>
+        <a href="contact.html" class="btn btn-secondary"
+          >Request Custom Quotation</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col footer-logo-desc">
+          <h2>Baidik Puja</h2>
+          <p
+            style="
+              font-size: 0.75rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: var(--gold);
+              margin-bottom: 0.5rem;
+              font-weight: 600;
+            "
+          >
+            वैदिक पूजा सामग्री पसल
+          </p>
+          <p>
+            Supplier of purity, authentic products, and spiritual heritage since
+            1995. Partnering with retailers and temples.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-btn" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="social-btn" aria-label="WhatsApp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Product Catalog</a>
+            <a href="gallery.html">Store Gallery</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="../index.html">← Portfolio</a>
+
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Products</h3>
+          <div class="footer-links">
+            <a href="products.html?cat=puja-samagri">Puja Samagri</a>
+            <a href="products.html?cat=idols">Idols & Statues</a>
+            <a href="products.html?cat=incense">Incense & Dhoop</a>
+            <a href="products.html?cat=rudraksha">Rudraksha & Malas</a>
+            <a href="products.html?cat=decorative">Decorative Items</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Showroom Office</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Asan Tol, Kathmandu, Nepal</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <p style="margin-bottom: 0.25rem">
+                  Shop:
+                  <a href="tel:+977014564768" style="color: inherit"
+                    >+977 01 4564768</a
+                  >
+                </p>
+                <p>
+                  Proprietor:
+                  <a href="tel:+9779851014810" style="color: inherit"
+                    >+977 9851014810</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@baidikpujasamagri.com"
+                >info@baidikpujasamagri.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Baidik Puja Samagri Pasal. All Rights Reserved. Sourced
+          with Devotion.
+        </p>
+        <p>Made for Traditional Retailers & Temples</p>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Action -->
+    <a
+      href="#"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+      id="whatsapp-widget"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Read query parameter and auto-select category
+      window.addEventListener("load", () => {
+        const params = new URLSearchParams(window.location.search);
+        const cat = params.get("cat");
+        if (cat) {
+          const btn = document.querySelector(
+            `.category-btn[data-category="${cat}"]`,
+          );
+          if (btn) {
+            btn.click();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
