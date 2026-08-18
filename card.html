@@ -1,0 +1,319 @@
+<!-- ================================
+     ANUSHA GHIMIRE — DIGITAL CARD
+     ================================ -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
+<section class="contact-card">
+
+  <div class="contact-photo">
+    <img
+      src="assets/images/AnushaGhimire4.png"
+      alt="Anusha Ghimire"
+    />
+  </div>
+
+  <h2>ANUSHA GHIMIRE</h2>
+
+  <p class="contact-role">
+    Creator · AI Student · Public Speaker
+  </p><p class="contact-role">
+    Sunway College Kathmandu  </p>
+
+<div class="contact-icons">
+
+  <a href="https://www.linkedin.com/in/anusaghmr/"
+     target="_blank"
+     aria-label="LinkedIn"
+     title="LinkedIn">
+    <i class="fa-brands fa-linkedin-in"></i>
+    <span>LinkedIn</span>
+  </a>
+
+  <a href="https://www.instagram.com/madebyanusa/"
+     target="_blank"
+     aria-label="Instagram"
+     title="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+
+  <a href="tel:+9779768992109"
+     aria-label="Phone"
+     title="Phone">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call</span>
+  </a>
+
+  <a href="mailto:heyyanusha@gmail.com"
+     aria-label="Email"
+     title="Email">
+    <i class="fa-solid fa-envelope"></i>
+    <span>Email</span>
+  </a>
+
+  <a href="https://github.com/anusaghmr"
+     target="_blank"
+     aria-label="GitHub"
+     title="GitHub">
+    <i class="fa-brands fa-github"></i>
+    <span>GitHub</span>
+  </a>
+
+  <a href="https://medium.com/@anusaghmr"
+     target="_blank"
+     aria-label="Medium"
+     title="Medium">
+    <i class="fa-brands fa-medium"></i>
+    <span>Medium</span>
+  </a>
+
+  <a href="https://maps.google.com/?q=Gaushala,Kathmandu,Nepal"
+     target="_blank"
+     aria-label="Location"
+     title="Location">
+    <i class="fa-solid fa-location-dot"></i>
+    <span>Location</span>
+  </a>
+
+  <a href="https://anushaghimire.com.np/"
+     target="_blank"
+     aria-label="Website"
+     title="Website">
+    <i class="fa-solid fa-globe"></i>
+    <span>Portfolio</span>
+  </a>
+
+</div>
+  <button class="save-contact" onclick="saveContact()">
+    SAVE CONTACT
+  </button>
+
+</section>
+
+
+<style>
+/* ================================
+   DIGITAL CONTACT CARD
+   ================================ */
+
+.contact-card {
+  width: min(320px, calc(100% - 32px));
+  margin: 80px auto;
+  padding: 55px 35px 40px;
+
+  background: #e4d9f7;
+
+  /* thick paper frame */
+  border: 7px solid #6b405d;
+
+  /* slightly imperfect editorial/paper feel */
+  outline: 4px solid #e497d9;
+  outline-offset: -20px;
+
+  color: #4a1c2d;
+  text-align: center;
+
+  /* layered paper depth */
+  box-shadow:
+    0 2px 0 #4a1c2d,
+    0 8px 0 -2px #b99fc9,
+    0 14px 28px rgba(74, 28, 45, 0.12),
+    0 25px 55px rgba(74, 28, 45, 0.08);
+
+  position: relative;
+}
+/* PHOTO */
+
+.contact-photo {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 25px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  border: 5px solid #f2895e;
+  background: #e4d9f7;
+}
+
+.contact-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 0%;
+  display: block;
+  transform: scale(2.5);
+}
+
+/* NAME */
+
+.contact-card h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 7vw, 4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+
+  color: #4a1c2d;
+}
+
+.contact-role {
+  /* margin: 12px 0 35px; */
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+
+  color: #4a1c2d;
+}
+
+/* ICONS */
+
+.contact-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+
+  width: 100%;
+  margin: 0 auto 35px;
+}
+
+.contact-icons a {
+  min-height: 72px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1.5px solid #c9bce0;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.28);
+
+  color: #4a1c2d;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.contact-icons i {
+  display: block;
+
+  font-size: 21px;
+  line-height: 1;
+}
+
+.contact-icons span {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.contact-icons a:hover {
+  background: #4a1c2d;
+  border-color: #4a1c2d;
+  color: #f5f1eb;
+  transform: translateY(-3px);
+}
+/* SAVE CONTACT */
+
+.save-contact {
+  width: 100%;
+  padding: 16px 22px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: #f2895e;
+  color: #fffaf7;
+
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(242, 137, 94, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.save-contact:hover {
+  background: #4a1c2d;
+
+  transform: translateY(-2px);
+
+  /* box-shadow:
+    0 10px 24px rgba(74, 28, 45, 0.18); */
+}
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .contact-card {
+    width: calc(100% - 24px);
+    padding: 42px 24px 30px;
+  }
+
+  .contact-photo {
+    width: 125px;
+    height: 125px;
+  }
+
+  .contact-icons {
+    gap: 11px;
+  }
+
+  .contact-icons a {
+    width: 40px;
+    height: 40px;
+  }
+}
+</style>
+
+
+<script>
+function saveContact() {
+  const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Anusha Ghimire
+N:Ghimire;Anusha;;;
+ORG:Sunway College Kathmandu
+TITLE:Creator, AI Student & Public Speaker
+TEL;TYPE=CELL:+9779768992109
+EMAIL;TYPE=INTERNET:heyyanusha@gmail.com
+ADR;TYPE=HOME:;;Gaushala;Kathmandu;;Nepal
+URL:https://anushaghimire.com.np/
+URL:https://www.linkedin.com/in/anusaghmr/
+URL:https://www.instagram.com/madebyanusa/
+URL:https://github.com/anusaghmr
+URL:https://medium.com/@anusaghmr
+NOTE:Student at Sunway College Kathmandu
+END:VCARD`;
+
+  const blob = new Blob([vcard], {
+    type: "text/vcard;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "Anusha-Ghimire.vcf";
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(url);
+}
+</script>
