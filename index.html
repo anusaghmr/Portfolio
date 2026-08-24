@@ -9,6 +9,7 @@
       content="Anusha Ghimire is a Computer Science with AI student, content creator, public speaker, and emcee from Nepal exploring technology, storytelling, digital media, and creative communication."
     />
     <link rel="canonical" href="https://anushaghimire.com.np/" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -1154,6 +1155,107 @@
   }
 }
 
+/* ================================
+   SOCIAL CARDS
+================================ */
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+.social-card {
+  min-height: 105px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.social-card:hover {
+  background: white;
+  color: var(--maroon-deep);
+  border-color: white;
+  transform: translateY(-4px);
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 1.35rem;
+
+  transition: all 0.25s ease;
+}
+
+.social-card:hover .social-icon {
+  background: var(--maroon-deep);
+  color: white;
+  border-color: var(--maroon-deep);
+}
+
+.social-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.social-card p {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+.social-arrow {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  opacity: 0.5;
+
+  transition: transform 0.25s ease;
+}
+
+.social-card:hover .social-arrow {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-card {
+    min-height: 90px;
+  }
+}
 
 
 
@@ -1190,7 +1292,7 @@
       "@type": "WebSite",
       "name": "Anusha Ghimire",
       "url": "https://anushaghimire.com.np/",
-      "description": "Official portfolio of Anusha Ghimire, an AI student, content creator, public speaker, and emcee."
+      "description": "Official portfolio of Anusha Ghimire, an AI student, Content Creator, Public Speaker, and emcee."
     }
     </script>
   </head>
@@ -1495,7 +1597,7 @@
               <span class="work-number">02</span>
               <span class="work-title">Content & Reels</span>
               <span class="work-platforms">
-                <a href="https://www.instagram.com/anusaghmr/" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/madebyanusa/" target="_blank">Instagram</a>
               </span>
             </li>
 
@@ -1517,7 +1619,7 @@
                 <a href="https://drive.google.com/drive/u/0/folders/1Vo4A-FWJ4meeT3T2SSdbC6hyx6GYZT1R"
                   target="_blank">Drive</a>
                 <span>·</span>
-                <a href="https://www.instagram.com/anusaghmr/" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/madebyanusa/" target="_blank">Instagram</a>
               </span>
             </li>
 
@@ -1525,7 +1627,7 @@
               <span class="work-number">05</span>
               <span class="work-title">Digital Storytelling</span>
               <span class="work-platforms">
-                <a href="https://www.instagram.com/anusaghmr/" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/madebyanusa/" target="_blank">Instagram</a>
                 <span>·</span>
                 <a href="https://medium.com/@anusaghmr/" target="_blank">Medium</a>
               </span>
@@ -1618,35 +1720,103 @@
         alt="Portrait of Anusha Ghimire"
       />
 
-        <form
-          onsubmit="
-            event.preventDefault();
-            alert('Thanks for filling this out! This form is not yet connected to an email service — please reach out directly at heyyanusha@gmail.com in the meantime.');
-          "
+        <div class="social-grid">
+
+        <a
+          href="https://www.instagram.com/madebyanusa/"
+          target="_blank"
+          class="social-card"
+          aria-label="Instagram"
         >
-          <div class="form-row">
-            <div class="form-group">
-              <label>First name *</label><input type="text" required />
-            </div>
-            <div class="form-group">
-              <label>Last name *</label><input type="text" required />
-            </div>
+          <div class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Email *</label><input type="email" required />
-            </div>
-            <div class="form-group">
-              <label>Phone</label><input type="tel" />
-            </div>
+          <div>
+            <h4>Instagram</h4>
+            <p>@madebyanusa</p>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Type your message here</label><input type="text" />
-            </div>
+          <span class="social-arrow">↗</span>
+        </a>
+
+        <a
+          href="https://github.com/anusaghmr"
+          target="_blank"
+          class="social-card"
+          aria-label="GitHub"
+        >
+          <div class="social-icon">
+            <i class="fa-brands fa-github"></i>
           </div>
-          <button class="submit-btn" type="submit">Submit</button>
-        </form>
+          <div>
+            <h4>GitHub</h4>
+            <p>@anusaghmr</p>
+          </div>
+          <span class="social-arrow">↗</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/anusaghmr/"
+          target="_blank"
+          class="social-card"
+          aria-label="LinkedIn"
+        >
+          <div class="social-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <div>
+            <h4>LinkedIn</h4>
+            <p>/in/anusaghmr</p>
+          </div>
+          <span class="social-arrow">↗</span>
+        </a>
+
+        <a
+          href="https://medium.com/@anusaghmr/"
+          target="_blank"
+          class="social-card"
+          aria-label="Medium"
+        >
+          <div class="social-icon">
+            <i class="fa-brands fa-medium"></i>
+          </div>
+          <div>
+            <h4>Medium</h4>
+            <p>@anusaghmr</p>
+          </div>
+          <span class="social-arrow">↗</span>
+        </a>
+        <a
+          href="https://letterboxd.com/anusaghmr/"
+          target="_blank"
+          class="social-card"
+          aria-label="Letterboxd"
+        >
+          <div class="social-icon">
+            <i class="fa-brands fa-letterboxd"></i>
+          </div>
+          <div>
+            <h4>Letterboxd</h4>
+            <p>@anusaghmr</p>
+          </div>
+          <span class="social-arrow">↗</span>
+        </a>
+
+        <a
+          href="mailto:heyyanusha@gmail.com"
+          class="social-card"
+          aria-label="Email"
+        >
+          <div class="social-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>heyyanusha@gmail.com</p>
+          </div>
+          <span class="social-arrow">↗</span>
+        </a>
+
+      </div>
       </div>
 
       <div class="footer-grid">
@@ -1661,7 +1831,7 @@
           </div>
         <div>
           <h4>Contact details</h4>
-          <p>heyyanusha@gmail.com</p>
+          <p>anushaghimire00@gmail.com (ONLY FOR EMERGENCIES)</p>
           <a href="https://www.instagram.com/madebyanusa/" target="_blank"
             >@madebyanusa</a
           >
