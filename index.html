@@ -260,25 +260,6 @@
         filter: drop-shadow(0 30px 40px rgba(94, 36, 57, 0.18));
         animation: floaty 6s ease-in-out infinite;
       }
-      .hero-image-2 {
-        position: absolute;
-        right: -4%;
-        top: 19%;
-        width: min(67vw, 700px);
-        z-index: 1;
-        filter: drop-shadow(0 30px 40px rgba(94, 36, 57, 0.18));
-        animation: floaty 6s ease-in-out infinite;
-      }
-      .hero-image-3 {
-        position: absolute;
-        right: -12%;
-        width: 85vw;
-        max-width: 1200px;
-        top: -45%;
-        z-index: 3;
-        filter: drop-shadow(0 30px 40px rgba(94, 36, 57, 0.18));
-        animation: floaty 6s ease-in-out infinite;
-      }
       @keyframes floaty {
         0% {
           transform: translateY(0);
@@ -301,14 +282,14 @@
         }
       }
       /* @keyframes floaty {
-        0%,
-        100% {
-          transform: translateY(0) rotate(0deg);
-        }
-        50% {
-          transform: translateY(-16px) rotate(-2deg);
-        }
-      } */
+              0%,
+              100% {
+                transform: translateY(0) rotate(0deg);
+              }
+              50% {
+                transform: translateY(-16px) rotate(-2deg);
+              }
+            } */
       .hero-bottom {
         display: flex;
         justify-content: space-between;
@@ -418,6 +399,9 @@
         grid-column: 2;
         grid-row: 1 / span 3;
         position: relative;
+      }
+      .services-photo {
+        display: none;
       }
       .services-label {
         position: absolute;
@@ -715,7 +699,7 @@
         text-align: center;
       }
       /* .client-card:hover {
-        background: var(--lavender-light); */
+              background: var(--lavender-light); */
 
       .work-strip {
         display: grid;
@@ -868,9 +852,7 @@
         .nav-toggle {
           display: block;
         }
-        .hero-image-1,
-        .hero-image-2,
-        .hero-image-3 {
+        .hero-image-1 {
           position: absolute;
           display: block;
         }
@@ -886,17 +868,6 @@
           right: 27%;
           top: 22%;
           width: min(30vw, 300px);
-        }
-        .hero-image-2 {
-          right: -5%;
-          top: 24%;
-          width: min(64vw, 560px);
-        }
-        .hero-image-3 {
-          right: -12%;
-          top: -45%;
-          width: 85vw;
-          max-width: 1200px;
         }
         .hero-bottom {
           margin-top: auto;
@@ -984,37 +955,30 @@
         .hero {
           padding: 36px 20px 30px;
           background-size: 36px 36px;
-          min-height: 0;
+          min-height: 4;
           overflow: visible;
           min-width: 0;
+          position: relative;
+          z-index: 10;
+        }
+        .stats {
+          margin-top: 0;
         }
         .hero-headline {
-          font-size: clamp(2.1rem, 9vw, 2.8rem);
+          font-size: clamp(2.1rem, 9vw, 4.8rem);
           letter-spacing: -0.5px;
           max-width: none;
           margin-top: 12px;
         }
-        .hero-image-1,
-        .hero-image-2,
-        .hero-image-3 {
-          position: absolute;
-          inset: auto;
-          width: auto;
-          height: auto;
-          max-width: 100%;
-          align-self: start;
-          margin: 0;
-          object-fit: contain;
-          transform: none;
-        }
         .hero {
           display: grid;
           grid-template-columns: 1fr;
+          grid-template-rows: auto minmax(300px, 55vw) auto auto;
           grid-template-areas:
-          "headline"
-          "photos"
-          "bottom"
-          "social";
+            "headline"
+            "photos"
+            "bottom"
+            "social";
           align-content: start;
         }
         .hero-headline {
@@ -1028,22 +992,13 @@
           z-index: 2;
         }
 
-        .hero-image-2 {
-          grid-area: photos;
-          width: min(78vw, 300px);
-          margin-top: 8px;
-          margin-left: 0;
-          z-index: 1;
+        .hero-copy {
+          font-size: 0.92rem;
+          max-width: 100%;
+          position: relative;
+          top: 230px;
         }
 
-        .hero-image-3 {
-          grid-area: photos;
-          width: min(58vw, 230px);
-          max-height: min(420px, 92vw);
-          margin-top: -12%;
-          margin-left: 18%;
-          z-index: 3;
-}
         .hero-bottom {
           grid-area: bottom;
           margin-top: 180px;
@@ -1059,6 +1014,8 @@
           font-size: 0.9rem;
           letter-spacing: 0.04em;
           overflow-wrap: anywhere;
+          position: relative;
+          z-index: 10;
         }
         .hero-copy {
           font-size: 0.92rem;
@@ -1088,6 +1045,22 @@
         }
         .services {
           grid-template-columns: 1fr;
+        }
+        .services-intro {
+          min-height: 0;
+          background: none;
+          background-color: #000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .services-photo {
+          display: block;
+          width: min(100%, 320px);
+          height: auto;
+          max-width: 100%;
+          margin: 10px auto;
+          object-fit: contain;
         }
         .services-label {
           font-size: 2rem;
@@ -1187,123 +1160,232 @@
         }
       }
 
+      .services-photo {
+        display: none;
+      }
+      @media (max-width: 600px) {
+        .services-intro {
+          grid-column: 1 / -1;
+          grid-row: auto;
+        }
+        .services {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .services .service-card {
+          grid-column: auto;
+          grid-row: auto;
+        }
+        .services-photo {
+          display: block;
+          width: min(100%, 320px);
+          height: auto;
+          max-width: 100%;
+          margin: 10px auto;
+          object-fit: contain;
+        }
+      }
+
+      @media (min-width: 381px) and (max-width: 600px) {
+        .hero-image-1 {
+          position: absolute !important;
+          top: 30% !important;
+          left: -20% !important;
+          right: auto !important;
+          width: 350px !important;
+          height: auto !important;
+          transform: translateY(3px) !important;
+          animation: none !important;
+          grid-area: photos;
+          margin: 0;
+          z-index: 2;
+        }
+      }
+
+      /* 380 */
+
       @media (max-width: 380px) {
-  .hero {
-    position: relative !important;
-    z-index: 10 !important;
-    padding-bottom: 10px !important;
-  }
+        .hero {
+          position: relative !important;
+          z-index: 10 !important;
+          padding-bottom: 10px !important;
+        }
 
-  .stats {
-    margin-top: 0 !important;
-  }
+        .hero-image-1 {
+          position: absolute !important; /* Freely positions the image relative to its positioned parent */
+          top: -30% !important; /* Places the image 65% down from the top of its parent */
+          left: -12% !important; /* Moves the image 10% outside the left side of its parent */
+          right: auto !important; /* Disables right-side positioning */
+          width: min(
+            480vw,
+            380px
+          ); /* Image width = smaller of 48% viewport width or 190px */
+          margin-top: 8px; /* Adds 8px space above the image */
+          margin-left: 4%; /* Adds 4% left margin, shifting the image slightly right */
+          transform: translateY(
+            30px
+          ) !important; /* Visually moves the image another 30px downward */
+          animation: none !important; /* Disables any animation on the image */
+          grid-area: photos; /* Assigns the image to the CSS Grid area named "photos" */
+          z-index: 2; /* Places the image above elements with lower z-index */
+        }
+        .hero-copy {
+          font-size: 0.92rem;
+          max-width: 100%;
+          position: relative;
+          top: 0px;
+        }
 
-.social-links {
-  font-size: 0.78rem !important;
-  white-space: nowrap !important;
-  flex-wrap: nowrap !important;
-  gap: 5px !important;
-}
+        .services {
+          grid-template-columns: 1fr 1fr !important;
+        }
 
-.hero-image-1 {
-  position: absolute !important;
-  top: 65% !important;
-  left: -10% !important;
-  right: auto !important;
+        .services-intro {
+          grid-column: 1 / -1 !important;
+          grid-row: 1 !important;
+        }
+        .services-intro {
+          grid-column: 1 / -1 !important;
+          grid-row: 1 !important;
+          min-height: 1 !important;
+          background: none !important;
+          background-color: #000 !important;
 
-  transform: translateY(30px) !important;
-  animation: none !important;
-}
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+        }
 
-.hero-image-2 {
-  position: absolute !important;
-  top: 80% !important;
-  left: 30% !important;
-  right: auto !important;
+        .services-label {
+          position: static !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          font-size: 1.5rem !important;
+          padding: 24px 20px !important;
+        }
 
-  transform: translateY(30px) !important;
-  animation: none !important;
-}
+        .services-photo {
+          display: block !important;
+          width: min(100%, 320px) !important;
+          height: auto !important;
+          max-width: 100% !important;
+          margin: 10px 10px !important;
+          object-fit: contain !important;
+        }
+        .service-card {
+          width: 100% !important;
+          max-width: none !important;
+          box-sizing: border-box;
+          padding: 26px 18px;
+        }
 
-  .hero-image-3 {
-    position: absolute !important;
-    width: 500px !important;
-    height: auto !important;
-    max-width: none !important;
-    max-height: none !important;
+        .service-card.pos-1 {
+          grid-column: 1 !important;
+          grid-row: 2 !important;
+        }
 
-    top: 80% !important;
-    right: -35% !important;
-    left: auto !important;
+        .service-card.pos-2 {
+          grid-column: 2 !important;
+          grid-row: 2 !important;
+        }
 
-    margin: 0 !important;
-    transform: translateY(-280px) !important;
-    animation: none !important;
+        .service-card.pos-3 {
+          grid-column: 1 !important;
+          grid-row: 3 !important;
+        }
 
-    z-index: 3 !important;
-  }
+        .service-card.pos-4 {
+          grid-column: 2 !important;
+          grid-row: 3 !important;
+        }
 
-  .hero-copy {
-    font-size: 0.92rem;
-    max-width: 100%;
-    position: relative;
-    top: 230px;
-  }
-}
+        .service-card.pos-5 {
+          grid-column: 1 !important;
+          grid-row: 4 !important;
+        }
 
-      .instagram-section {
-        background: var(--bg-pale);
-      }
+        .service-card.pos-6 {
+          grid-column: 2 !important;
+          grid-row: 4 !important;
+        }
 
-      .instagram-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 60px 48px 40px;
-        border-bottom: 1px solid var(--line);
-      }
+        .services-label {
+          font-size: 1.5rem;
+          padding: 24px 20px;
+        }
 
-      .instagram-header span {
-        display: block;
-        font-family: var(--font-display);
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--orange);
-        margin-bottom: 8px;
-      }
+        .service-card h3 {
+          font-size: 1.1rem;
+          margin-bottom: 12px;
+          line-height: 1.25;
+        }
 
-      .instagram-header h2 {
-        font-family: var(--font-display);
-        font-size: clamp(2.4rem, 5vw, 3.6rem);
-        color: var(--maroon-deep);
-      }
+        .service-card p {
+          max-width: 100%;
+          font-size: 0.85rem;
+          line-height: 1.5;
+        }
 
-      .instagram-btn {
-        padding: 14px 24px;
-        border: 1px solid var(--maroon-deep);
-        font-family: var(--font-display);
-        transition: all 0.25s ease;
-      }
+        .instagram-section {
+          background: var(--bg-pale);
+        }
 
-      .instagram-btn:hover {
-        background: var(--maroon-deep);
-        color: white;
-      }
+        .instagram-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          flex-wrap: wrap;
+          gap: 20px;
+          padding: 60px 48px 40px;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .instagram-header span {
+          display: block;
+          font-family: var(--font-display);
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 0.12em;
+          color: var(--orange);
+          margin-bottom: 8px;
+        }
+
+        .instagram-header h2 {
+          font-family: var(--font-display);
+          font-size: clamp(2.4rem, 5vw, 3.6rem);
+          color: var(--maroon-deep);
+        }
+
+        .instagram-btn {
+          padding: 14px 24px;
+          border: 1px solid var(--maroon-deep);
+          font-family: var(--font-display);
+          transition: all 0.25s ease;
+        }
+
+        .instagram-btn:hover {
+          background: var(--maroon-deep);
+          color: white;
+        }
+
+        .hero-bottom {
+          margin-top: 130px !important;
+        }
 
         .signature {
-          padding: 10px 0 24px;
+          padding: 1px 0 2px;
+          margin-top: 0 !important;
+          transform: none !important;
         }
+
         .signature h2 {
           font-size: clamp(2rem, 14vw, 2.2rem);
           white-space: nowrap;
           overflow-wrap: anywhere;
         }
+      }
       /* ================================
-   FLOATING CARD POPUP
-   ================================ */
+         FLOATING CARD POPUP
+         ================================ */
 
       .card-popup-widget {
         position: fixed;
@@ -1390,6 +1472,8 @@
         display: block;
       }
 
+      /* 600 */
+
       /* Mobile */
       @media (max-width: 600px) {
         .card-popup-widget {
@@ -1410,24 +1494,35 @@
           width: 54px;
           height: 54px;
         }
-      }
 
-      body.menu-open,
-      body.card-open {
-        overflow: hidden;
-      }
+        body.menu-open,
+        body.card-open {
+          overflow: hidden;
+        }
 
-      @media (max-width: 600px) {
         .contact-grid {
           gap: 28px;
         }
         .contact-grid img {
           width: min(240px, 80vw);
         }
-        .social-card {
-          padding: 16px;
-          gap: 12px;
-          min-height: 88px;
+        .social-links {
+          font-size: 0.78rem !important;
+          white-space: nowrap !important;
+          flex-wrap: nowrap !important;
+          gap: 5px !important;
+        }
+
+        .signature {
+          padding: 1px 0 2px;
+          top: 1px;
+          transform: translateY(-15px);
+        }
+
+        .signature h2 {
+          font-size: clamp(2rem, 14vw, 2.2rem);
+          white-space: nowrap;
+          overflow-wrap: anywhere;
         }
         .social-icon {
           width: 44px;
@@ -1458,8 +1553,8 @@
       }
 
       /* ================================
-   SOCIAL CARDS
-================================ */
+         SOCIAL CARDS
+      ================================ */
 
       .social-grid {
         display: grid;
@@ -1557,6 +1652,517 @@
           min-height: 90px;
         }
       }
+
+      /* =========================================================
+   FINAL RESPONSIVE HERO SYSTEM
+   ========================================================= */
+
+/* ---------- DESKTOP: 1201px+ ---------- */
+
+@media (min-width: 1201px) {
+  .hero {
+    min-height: 100vh;
+    padding: clamp(70px, 6vw, 100px) clamp(40px, 4vw, 70px) 60px;
+  }
+
+  .hero-headline {
+    font-size: clamp(4.5rem, 7vw, 6.2rem);
+    max-width: 1200px;
+    margin-top: 60px;
+  }
+
+.hero-image-1 {
+  position: absolute !important;
+  width: clamp(500px, 42vw, 680px) !important;
+  top: -6% !important;
+  right: 5% !important;
+  left: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  animation: floaty 6s ease-in-out infinite !important;
+}
+  .hero-bottom {
+    margin-top: clamp(50px, 5vw, 80px);
+  }
+
+  .signature {
+    margin-top: 180px;
+  }
+}
+
+
+/* ---------- LAPTOP: 901px–1200px ---------- */
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .hero {
+    min-height: 850px;
+    padding: 70px 40px 50px;
+    justify-content: flex-start;
+  }
+
+  .hero-headline {
+    font-size: clamp(4rem, 7vw, 5.5rem);
+    max-width: 65%;
+    margin-top: 50px;
+  }
+
+  .hero-image-1 {
+    position: absolute !important;
+    width: clamp(300px, 32vw, 380px) !important;
+    top: 22% !important;
+    right: 20% !important;
+    left: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    animation: floaty 6s ease-in-out infinite !important;
+  }
+
+  .hero-bottom {
+    margin-top: auto;
+    gap: 30px;
+  }
+
+  .hero-copy {
+    max-width: 330px;
+    font-size: 1rem;
+  }
+
+  .signature {
+    margin-top: 100px;
+  }
+
+  .social-links {
+    margin-top: 24px;
+  }
+}
+
+
+/* ---------- TABLET: 601px–900px ---------- */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero {
+    min-height: clamp(700px, 90vh, 850px);
+    padding: 60px 28px 40px;
+    justify-content: flex-start;
+  }
+
+  .hero-headline {
+    font-size: clamp(3.4rem, 8vw, 5rem);
+    max-width: 62%;
+    margin-top: 35px;
+  }
+
+.hero-image-1 {
+  position: absolute !important;
+  width: clamp(320px, 40vw, 400px) !important;
+  top: 15% !important;
+  right: 10% !important;
+  left: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  animation: floaty 6s ease-in-out infinite !important;
+}
+
+
+  .hero-bottom {
+    margin-top: auto;
+    gap: 24px;
+  }
+
+  .hero-copy {
+    max-width: 300px;
+    font-size: 0.98rem;
+  }
+
+  .signature {
+    margin-top: 60px;
+  }
+
+  .social-links {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   IMPORTANT: IMAGE IS NO LONGER ABSOLUTELY POSITIONED
+   ========================================================= */
+
+/* ---------- 381px–600px ---------- */
+
+@media (min-width: 381px) and (max-width: 600px) {
+  .hero {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "headline"
+      "photo"
+      "bottom"
+      "social" !important;
+
+    min-height: auto !important;
+    padding: 35px 20px 35px !important;
+    overflow: visible !important;
+    align-content: start !important;
+    gap: 0 !important;
+  }
+
+    .services {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .services-intro {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    height: 320px !important;
+    min-height: 320px !important;
+
+    display: block !important;
+  }
+
+
+
+
+
+  .hero-headline {
+    grid-area: headline !important;
+    max-width: 100% !important;
+    margin: 10px 0 20px !important;
+    font-size: clamp(2.5rem, 10vw, 4.5rem) !important;
+    line-height: 1 !important;
+  }
+
+  .hero-image-1 {
+    grid-area: photo !important;
+
+    position: relative !important;
+
+    width: clamp(300px, 75vw, 390px) !important;
+    max-width: none !important;
+    height: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    left: 50% !important;
+    margin: 0 !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 2 !important;
+    animation: none !important;
+  }
+
+  .hero-bottom {
+    grid-area: bottom !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    margin-top: 20px !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  .hero-copy {
+    position: static !important;
+    top: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .signature {
+    width: 100% !important;
+    margin-top: 15px !important;
+    padding: 5px 0 10px !important;
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .signature h2 {
+    font-size: clamp(2rem, 10vw, 3.5rem) !important;
+    white-space: nowrap !important;
+  }
+
+  .social-links {
+    grid-area: social !important;
+
+    position: static !important;
+
+    width: 100% !important;
+    margin-top: 10px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+
+    gap: 5px !important;
+
+    font-size: clamp(0.72rem, 2.5vw, 0.9rem) !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  .services-intro {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    overflow: hidden !important;
+    position: relative !important;
+
+    height: 320px !important;
+    min-height: 320px !important;
+
+    display: block !important;
+  }
+
+  .services-photo {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    height: 620px !important;
+
+    margin: -25px 0 0 !important;
+
+    object-fit: cover !important;
+    object-position: center 20% !important;
+
+    transform: scale(1.25) !important;
+    transform-origin: center center !important;
+  }
+
+.services-label {
+  width: fit-content !important;
+  max-width: 70% !important;
+}  
+
+@media (min-width: 381px) and (max-width: 600px) {
+  .services {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .services-intro {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    /* same ratio as 380, but scales with screen width */
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    min-height: 0 !important;
+    height: auto !important;
+
+    display: block !important;
+  }
+
+  .services-photo {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    object-fit: cover !important;
+    object-position: center 20% !important;
+
+    /* zoom */
+    transform: scale(1.25) !important;
+    transform-origin: center center !important;
+  }
+
+.services-label {
+  display: block !important;
+  position: absolute !important;
+
+  left: 20px !important;
+  top: -55px !important;
+  bottom: auto !important;
+
+  width: fit-content !important;
+
+  font-size: 1.5rem !important;
+  line-height: 1.05 !important;
+  padding: 18px 20px !important;
+
+  z-index: 3 !important;
+}
+
+  /* let the first writing/card come slightly over the photo */
+  /* .services-intro + .service-card {
+    margin-top: -30px !important;
+    position: relative !important;
+    z-index: 4 !important;
+  }
+
+  .services .service-card {
+    position: relative !important;
+    z-index: 2 !important;
+  } */
+}
+
+
+
+
+
+
+
+
+}
+
+
+/* ---------- 380px AND BELOW ---------- */
+
+@media (max-width: 380px) {
+  .hero {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "headline"
+      "photo"
+      "bottom"
+      "social" !important;
+
+    min-height: auto !important;
+    padding: 30px 18px 25px !important;
+    overflow: visible !important;
+    align-content: start !important;
+    gap: 0 !important;
+  }
+
+  .hero-headline {
+    grid-area: headline !important;
+
+    max-width: 100% !important;
+    margin: 5px 0 15px !important;
+
+    font-size: clamp(2.2rem, 11vw, 3.4rem) !important;
+    line-height: 1 !important;
+  }
+
+  .hero-image-1 {
+    grid-area: photo !important;
+    position: relative !important;
+
+    width: min(100%, 350px) !important;
+    max-width: none !important;
+    height: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 50% !important;
+
+    margin: 0 !important;
+    transform: translate(-50%, -30px) !important;
+
+    z-index: 2 !important;
+    animation: none !important;
+  }
+
+  .hero-bottom {
+    grid-area: bottom !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    width: 100% !important;
+
+    margin-top: 90px !important;
+    gap: 12px !important;
+  }
+
+  .hero-copy {
+    position: static !important;
+    top: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .signature {
+    width: 100% !important;
+    margin-top: 8px !important;
+    padding: 2px 0 5px !important;
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .signature h2 {
+    font-size: clamp(1.8rem, 9.5vw, 2.3rem) !important;
+    white-space: nowrap !important;
+  }
+
+  .social-links {
+    grid-area: social !important;
+
+    position: static !important;
+
+    width: 100% !important;
+    margin-top: 8px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+
+    gap: 4px !important;
+
+    font-size: 0.72rem !important;
+    letter-spacing: 0.02em !important;
+  }
+    .services-intro {
+    background: none !important;
+    background-color: transparent !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+    min-height: 320px !important;
+  }
+
+  .services-photo {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 320px !important;
+
+    object-fit: cover !important;
+    object-position: center 20% !important;
+
+    margin: 0 !important;
+  }
+
+}
+
+
+
     </style>
     <link
       rel="icon"
@@ -1643,19 +2249,9 @@
         Creator.<br />AI Student.<br />Public Speaker.
       </h1>
       <img
-        src="assets/images/AnushaGhimire9.png"
-        alt="Anusha Ghimire, AI student and content creator"
+        src="assets/images/Untitled design.png"
+        alt="Anusha Ghimire"
         class="hero-image-1"
-      />
-      <img
-        src="assets/images/AnushaGhimire10.png"
-        alt="Anusha Ghimire, content creator and public speaker"
-        class="hero-image-2"
-      />
-      <img
-        src="assets/images/AnushaGhimire11.png"
-        alt="Anusha Ghimire hosting and speaking on stage"
-        class="hero-image-3"
       />
       <div class="hero-bottom">
         <p class="hero-copy">
@@ -1702,8 +2298,13 @@
     <section class="services" id="services">
       <div class="services-intro">
         <div class="services-label">What I do</div>
-      </div>
 
+        <img
+          src="assets/images/AnushaGhimire1.jpg"
+          alt="Anusha Ghimire"
+          class="services-photo"
+        />
+      </div>
       <div class="service-card pos-1">
         <h3>AI &amp; Tech<br />learning</h3>
         <p>
