@@ -1657,363 +1657,355 @@
    FINAL RESPONSIVE HERO SYSTEM
    ========================================================= */
 
-/* ---------- DESKTOP: 1201px+ ---------- */
+      /* ---------- DESKTOP: 1201px+ ---------- */
 
-@media (min-width: 1201px) {
-  .hero {
-    min-height: 100vh;
-    padding: clamp(70px, 6vw, 100px) clamp(40px, 4vw, 70px) 60px;
-  }
+      @media (min-width: 1201px) {
+        .hero {
+          min-height: 100vh;
+          padding: clamp(70px, 6vw, 100px) clamp(40px, 4vw, 70px) 60px;
+        }
 
-  .hero-headline {
-    font-size: clamp(4.5rem, 7vw, 6.2rem);
-    max-width: 1200px;
-    margin-top: 60px;
-  }
+        .hero-headline {
+          font-size: clamp(4.5rem, 7vw, 6.2rem);
+          max-width: 1200px;
+          margin-top: 60px;
+        }
 
-.hero-image-1 {
-  position: absolute !important;
-  width: clamp(500px, 42vw, 680px) !important;
-  top: -6% !important;
-  right: 5% !important;
-  left: auto !important;
-  margin: 0 !important;
-  transform: none !important;
-  animation: floaty 6s ease-in-out infinite !important;
-}
-  .hero-bottom {
-    margin-top: clamp(50px, 5vw, 80px);
-  }
+        .hero-image-1 {
+          position: absolute !important;
+          width: clamp(500px, 42vw, 680px) !important;
+          top: -6% !important;
+          right: 5% !important;
+          left: auto !important;
+          margin: 0 !important;
+          transform: none !important;
+          animation: floaty 6s ease-in-out infinite !important;
+        }
+        .hero-bottom {
+          margin-top: clamp(50px, 5vw, 80px);
+        }
 
-  .signature {
-    margin-top: 180px;
-  }
-}
+        .signature {
+          margin-top: 180px;
+        }
+      }
 
+      /* ---------- LAPTOP: 901px–1200px ---------- */
 
-/* ---------- LAPTOP: 901px–1200px ---------- */
+      @media (min-width: 901px) and (max-width: 1200px) {
+        .hero {
+          min-height: 850px;
+          padding: 70px 40px 50px;
+          justify-content: flex-start;
+        }
 
-@media (min-width: 901px) and (max-width: 1200px) {
-  .hero {
-    min-height: 850px;
-    padding: 70px 40px 50px;
-    justify-content: flex-start;
-  }
+        .hero-headline {
+          font-size: clamp(4rem, 7vw, 5.5rem);
+          max-width: 65%;
+          margin-top: 50px;
+        }
 
-  .hero-headline {
-    font-size: clamp(4rem, 7vw, 5.5rem);
-    max-width: 65%;
-    margin-top: 50px;
-  }
+        .hero-image-1 {
+          position: absolute !important;
+          width: clamp(300px, 32vw, 380px) !important;
+          top: 22% !important;
+          right: 50% !important;
+          left: auto !important;
+          margin: 0 !important;
+          transform: none !important;
+          animation: floaty 6s ease-in-out infinite !important;
+        }
 
-  .hero-image-1 {
-    position: absolute !important;
-    width: clamp(300px, 32vw, 380px) !important;
-    top: 22% !important;
-    right: 20% !important;
-    left: auto !important;
-    margin: 0 !important;
-    transform: none !important;
-    animation: floaty 6s ease-in-out infinite !important;
-  }
+        .hero-bottom {
+          margin-top: auto;
+          gap: 30px;
+        }
 
-  .hero-bottom {
-    margin-top: auto;
-    gap: 30px;
-  }
+        .hero-copy {
+          max-width: 330px;
+          font-size: 1rem;
+        }
 
-  .hero-copy {
-    max-width: 330px;
-    font-size: 1rem;
-  }
+        .signature {
+          margin-top: 100px;
+        }
 
-  .signature {
-    margin-top: 100px;
-  }
+        .social-links {
+          margin-top: 24px;
+        }
+      }
 
-  .social-links {
-    margin-top: 24px;
-  }
-}
+      /* ---------- TABLET: 601px–900px ---------- */
 
+      @media (min-width: 601px) and (max-width: 900px) {
+        .hero {
+          min-height: clamp(700px, 90vh, 850px);
+          padding: 60px 28px 40px;
+          justify-content: flex-start;
+        }
 
-/* ---------- TABLET: 601px–900px ---------- */
+        .hero-headline {
+          font-size: clamp(3.4rem, 8vw, 5rem);
+          max-width: 62%;
+          margin-top: 35px;
+        }
 
-@media (min-width: 601px) and (max-width: 900px) {
-  .hero {
-    min-height: clamp(700px, 90vh, 850px);
-    padding: 60px 28px 40px;
-    justify-content: flex-start;
-  }
+        .hero-image-1 {
+          position: absolute !important;
+          width: clamp(320px, 40vw, 400px) !important;
+          top: 15% !important;
+          right: 10% !important;
+          left: auto !important;
+          margin: 0 !important;
+          transform: none !important;
+          animation: floaty 6s ease-in-out infinite !important;
+        }
 
-  .hero-headline {
-    font-size: clamp(3.4rem, 8vw, 5rem);
-    max-width: 62%;
-    margin-top: 35px;
-  }
+        .hero-bottom {
+          margin-top: auto;
+          gap: 24px;
+        }
 
-.hero-image-1 {
-  position: absolute !important;
-  width: clamp(320px, 40vw, 400px) !important;
-  top: 15% !important;
-  right: 10% !important;
-  left: auto !important;
-  margin: 0 !important;
-  transform: none !important;
-  animation: floaty 6s ease-in-out infinite !important;
-}
+        .hero-copy {
+          max-width: 300px;
+          font-size: 0.98rem;
+        }
 
+        .signature {
+          margin-top: 60px;
+        }
 
-  .hero-bottom {
-    margin-top: auto;
-    gap: 24px;
-  }
+        .social-links {
+          margin-top: 20px;
+          font-size: 1.1rem;
+        }
+      }
 
-  .hero-copy {
-    max-width: 300px;
-    font-size: 0.98rem;
-  }
-
-  .signature {
-    margin-top: 60px;
-  }
-
-  .social-links {
-    margin-top: 20px;
-    font-size: 1.1rem;
-  }
-}
-
-
-/* =========================================================
+      /* =========================================================
    MOBILE
    IMPORTANT: IMAGE IS NO LONGER ABSOLUTELY POSITIONED
    ========================================================= */
 
-/* ---------- 381px–600px ---------- */
+      /* ---------- 381px–600px ---------- */
 
-@media (min-width: 381px) and (max-width: 600px) {
-  .hero {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    grid-template-areas:
-      "headline"
-      "photo"
-      "bottom"
-      "social" !important;
+      @media (min-width: 381px) and (max-width: 600px) {
+        .hero {
+          display: grid !important;
+          grid-template-columns: 1fr !important;
+          grid-template-areas:
+            "headline"
+            "photo"
+            "bottom"
+            "social" !important;
 
-    min-height: auto !important;
-    padding: 35px 20px 35px !important;
-    overflow: visible !important;
-    align-content: start !important;
-    gap: 0 !important;
-  }
+          min-height: auto !important;
+          padding: 35px 20px 35px !important;
+          overflow: visible !important;
+          align-content: start !important;
+          gap: 0 !important;
+        }
 
-    .services {
-    grid-template-columns: 1fr 1fr !important;
-  }
+        .services {
+          grid-template-columns: 1fr 1fr !important;
+        }
 
-  .services-intro {
-    grid-column: 1 / -1 !important;
-    grid-row: 1 !important;
+        .services-intro {
+          grid-column: 1 / -1 !important;
+          grid-row: 1 !important;
 
-    background: transparent !important;
-    background-color: transparent !important;
+          background: transparent !important;
+          background-color: transparent !important;
 
-    position: relative !important;
-    overflow: hidden !important;
+          position: relative !important;
+          overflow: hidden !important;
 
-    height: 320px !important;
-    min-height: 320px !important;
+          height: 320px !important;
+          min-height: 320px !important;
 
-    display: block !important;
-  }
+          display: block !important;
+        }
 
+        .hero-headline {
+          grid-area: headline !important;
+          max-width: 100% !important;
+          margin: 10px 0 20px !important;
+          font-size: clamp(2.5rem, 10vw, 4.5rem) !important;
+          line-height: 1 !important;
+        }
 
+        .hero-image-1 {
+          grid-area: photo !important;
 
+          position: relative !important;
 
+          width: clamp(300px, 75vw, 390px) !important;
+          max-width: none !important;
+          height: auto !important;
 
-  .hero-headline {
-    grid-area: headline !important;
-    max-width: 100% !important;
-    margin: 10px 0 20px !important;
-    font-size: clamp(2.5rem, 10vw, 4.5rem) !important;
-    line-height: 1 !important;
-  }
+          top: auto !important;
+          right: auto !important;
+          bottom: auto !important;
 
-  .hero-image-1 {
-    grid-area: photo !important;
+          left: 50% !important;
+          margin: 0 !important;
 
-    position: relative !important;
+          transform: translateX(-50%) !important;
 
-    width: clamp(300px, 75vw, 390px) !important;
-    max-width: none !important;
-    height: auto !important;
+          z-index: 2 !important;
+          animation: none !important;
+        }
 
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
+        .hero-bottom {
+          grid-area: bottom !important;
 
-    left: 50% !important;
-    margin: 0 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
 
-    transform: translateX(-50%) !important;
+          margin-top: 20px !important;
+          gap: 15px !important;
+          width: 100% !important;
+        }
 
-    z-index: 2 !important;
-    animation: none !important;
-  }
+        .hero-copy {
+          position: static !important;
+          top: auto !important;
 
-  .hero-bottom {
-    grid-area: bottom !important;
+          width: 100% !important;
+          max-width: 100% !important;
 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
+          font-size: 0.92rem !important;
+          line-height: 1.6 !important;
+        }
 
-    margin-top: 20px !important;
-    gap: 15px !important;
-    width: 100% !important;
-  }
+        .signature {
+          width: 100% !important;
+          margin-top: 15px !important;
+          padding: 5px 0 10px !important;
+          transform: none !important;
+          overflow: hidden !important;
+        }
 
-  .hero-copy {
-    position: static !important;
-    top: auto !important;
+        .signature h2 {
+          font-size: clamp(2rem, 10vw, 3.5rem) !important;
+          white-space: nowrap !important;
+        }
 
-    width: 100% !important;
-    max-width: 100% !important;
+        .social-links {
+          grid-area: social !important;
 
-    font-size: 0.92rem !important;
-    line-height: 1.6 !important;
-  }
+          position: static !important;
 
-  .signature {
-    width: 100% !important;
-    margin-top: 15px !important;
-    padding: 5px 0 10px !important;
-    transform: none !important;
-    overflow: hidden !important;
-  }
+          width: 100% !important;
+          margin-top: 10px !important;
 
-  .signature h2 {
-    font-size: clamp(2rem, 10vw, 3.5rem) !important;
-    white-space: nowrap !important;
-  }
+          display: flex !important;
+          justify-content: center !important;
+          flex-wrap: wrap !important;
 
-  .social-links {
-    grid-area: social !important;
+          gap: 5px !important;
 
-    position: static !important;
+          font-size: clamp(0.72rem, 2.5vw, 0.9rem) !important;
+          letter-spacing: 0.03em !important;
+        }
 
-    width: 100% !important;
-    margin-top: 10px !important;
+        .services-intro {
+          grid-column: 1 / -1 !important;
+          grid-row: auto !important;
 
-    display: flex !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
+          background: transparent !important;
+          background-color: transparent !important;
 
-    gap: 5px !important;
+          overflow: hidden !important;
+          position: relative !important;
 
-    font-size: clamp(0.72rem, 2.5vw, 0.9rem) !important;
-    letter-spacing: 0.03em !important;
-  }
+          height: 320px !important;
+          min-height: 320px !important;
 
-  .services-intro {
-    grid-column: 1 / -1 !important;
-    grid-row: auto !important;
+          display: block !important;
+        }
 
-    background: transparent !important;
-    background-color: transparent !important;
+        .services-photo {
+          display: block !important;
 
-    overflow: hidden !important;
-    position: relative !important;
+          width: 100% !important;
+          max-width: none !important;
+          height: 620px !important;
 
-    height: 320px !important;
-    min-height: 320px !important;
+          margin: -25px 0 0 !important;
 
-    display: block !important;
-  }
+          object-fit: cover !important;
+          object-position: center 20% !important;
 
-  .services-photo {
-    display: block !important;
+          transform: scale(1.25) !important;
+          transform-origin: center center !important;
+        }
 
-    width: 100% !important;
-    max-width: none !important;
-    height: 620px !important;
+        .services-label {
+          width: fit-content !important;
+          max-width: 70% !important;
+        }
 
-    margin: -25px 0 0 !important;
+        @media (min-width: 381px) and (max-width: 600px) {
+          .services {
+            grid-template-columns: 1fr 1fr !important;
+          }
 
-    object-fit: cover !important;
-    object-position: center 20% !important;
+          .services-intro {
+            grid-column: 1 / -1 !important;
+            grid-row: 1 !important;
 
-    transform: scale(1.25) !important;
-    transform-origin: center center !important;
-  }
+            background: transparent !important;
+            background-color: transparent !important;
 
-.services-label {
-  width: fit-content !important;
-  max-width: 70% !important;
-}  
+            position: relative !important;
+            overflow: hidden !important;
 
-@media (min-width: 381px) and (max-width: 600px) {
-  .services {
-    grid-template-columns: 1fr 1fr !important;
-  }
+            /* same ratio as 380, but scales with screen width */
+            width: 100% !important;
+            aspect-ratio: 1 / 1 !important;
+            min-height: 0 !important;
+            height: auto !important;
 
-  .services-intro {
-    grid-column: 1 / -1 !important;
-    grid-row: 1 !important;
+            display: block !important;
+          }
 
-    background: transparent !important;
-    background-color: transparent !important;
+          .services-photo {
+            display: block !important;
 
-    position: relative !important;
-    overflow: hidden !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none !important;
 
-    /* same ratio as 380, but scales with screen width */
-    width: 100% !important;
-    aspect-ratio: 1 / 1 !important;
-    min-height: 0 !important;
-    height: auto !important;
+            margin: 0 !important;
 
-    display: block !important;
-  }
+            object-fit: cover !important;
+            object-position: center 20% !important;
 
-  .services-photo {
-    display: block !important;
+            /* zoom */
+            transform: scale(1.25) !important;
+            transform-origin: center center !important;
+          }
 
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
+          .services-label {
+            display: block !important;
+            position: absolute !important;
 
-    margin: 0 !important;
+            left: 20px !important;
+            top: -55px !important;
+            bottom: auto !important;
 
-    object-fit: cover !important;
-    object-position: center 20% !important;
+            width: fit-content !important;
 
-    /* zoom */
-    transform: scale(1.25) !important;
-    transform-origin: center center !important;
-  }
+            font-size: 1.5rem !important;
+            line-height: 1.05 !important;
+            padding: 18px 20px !important;
 
-.services-label {
-  display: block !important;
-  position: absolute !important;
+            z-index: 3 !important;
+          }
 
-  left: 20px !important;
-  top: -55px !important;
-  bottom: auto !important;
-
-  width: fit-content !important;
-
-  font-size: 1.5rem !important;
-  line-height: 1.05 !important;
-  padding: 18px 20px !important;
-
-  z-index: 3 !important;
-}
-
-  /* let the first writing/card come slightly over the photo */
-  /* .services-intro + .service-card {
+          /* let the first writing/card come slightly over the photo */
+          /* .services-intro + .service-card {
     margin-top: -30px !important;
     position: relative !important;
     z-index: 4 !important;
@@ -2023,146 +2015,230 @@
     position: relative !important;
     z-index: 2 !important;
   } */
-}
+        }
+      }
 
+      /* ---------- 380px AND BELOW ---------- */
 
+      @media (max-width: 380px) {
+        .hero {
+          display: grid !important;
+          grid-template-columns: 1fr !important;
+          grid-template-areas:
+            "headline"
+            "photo"
+            "bottom"
+            "social" !important;
 
+          min-height: auto !important;
+          padding: 30px 18px 25px !important;
+          overflow: visible !important;
+          align-content: start !important;
+          gap: 0 !important;
+        }
 
+        .hero-headline {
+          grid-area: headline !important;
 
+          max-width: 100% !important;
+          margin: 5px 0 15px !important;
 
+          font-size: clamp(2.2rem, 11vw, 3.4rem) !important;
+          line-height: 1 !important;
+        }
 
+        .hero-image-1 {
+          grid-area: photo !important;
+          position: relative !important;
 
-}
+          width: min(100%, 350px) !important;
+          max-width: none !important;
+          height: auto !important;
 
+          top: auto !important;
+          right: auto !important;
+          bottom: auto !important;
+          left: 50% !important;
 
-/* ---------- 380px AND BELOW ---------- */
+          margin: 0 !important;
+          transform: translate(-50%, -30px) !important;
 
-@media (max-width: 380px) {
-  .hero {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    grid-template-areas:
-      "headline"
-      "photo"
-      "bottom"
-      "social" !important;
+          z-index: 2 !important;
+          animation: none !important;
+        }
 
-    min-height: auto !important;
-    padding: 30px 18px 25px !important;
-    overflow: visible !important;
-    align-content: start !important;
-    gap: 0 !important;
-  }
+        .hero-bottom {
+          grid-area: bottom !important;
 
-  .hero-headline {
-    grid-area: headline !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
 
-    max-width: 100% !important;
-    margin: 5px 0 15px !important;
+          width: 100% !important;
 
-    font-size: clamp(2.2rem, 11vw, 3.4rem) !important;
-    line-height: 1 !important;
-  }
+          margin-top: 90px !important;
+          gap: 12px !important;
+        }
 
-  .hero-image-1 {
-    grid-area: photo !important;
-    position: relative !important;
+        .hero-copy {
+          position: static !important;
+          top: auto !important;
 
-    width: min(100%, 350px) !important;
-    max-width: none !important;
-    height: auto !important;
+          width: 100% !important;
+          max-width: 100% !important;
 
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: 50% !important;
+          font-size: 0.88rem !important;
+          line-height: 1.55 !important;
+        }
 
-    margin: 0 !important;
-    transform: translate(-50%, -30px) !important;
+        .signature {
+          width: 100% !important;
+          margin-top: 8px !important;
+          padding: 2px 0 5px !important;
+          transform: none !important;
+          overflow: hidden !important;
+        }
 
-    z-index: 2 !important;
-    animation: none !important;
-  }
+        .signature h2 {
+          font-size: clamp(1.8rem, 9.5vw, 2.3rem) !important;
+          white-space: nowrap !important;
+        }
 
-  .hero-bottom {
-    grid-area: bottom !important;
+        .social-links {
+          grid-area: social !important;
 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
+          position: static !important;
 
-    width: 100% !important;
+          width: 100% !important;
+          margin-top: 8px !important;
 
-    margin-top: 90px !important;
-    gap: 12px !important;
-  }
+          display: flex !important;
+          justify-content: center !important;
+          flex-wrap: wrap !important;
 
-  .hero-copy {
-    position: static !important;
-    top: auto !important;
+          gap: 4px !important;
 
-    width: 100% !important;
-    max-width: 100% !important;
+          font-size: 0.72rem !important;
+          letter-spacing: 0.02em !important;
+        }
+        .services-intro {
+          background: none !important;
+          background-color: transparent !important;
+          overflow: hidden !important;
+          position: relative !important;
+          display: block !important;
+          min-height: 320px !important;
+        }
 
-    font-size: 0.88rem !important;
-    line-height: 1.55 !important;
-  }
+        .services-photo {
+          display: block !important;
+          width: 100% !important;
+          max-width: none !important;
+          height: 320px !important;
 
-  .signature {
-    width: 100% !important;
-    margin-top: 8px !important;
-    padding: 2px 0 5px !important;
-    transform: none !important;
-    overflow: hidden !important;
-  }
+          object-fit: cover !important;
+          object-position: center 20% !important;
 
-  .signature h2 {
-    font-size: clamp(1.8rem, 9.5vw, 2.3rem) !important;
-    white-space: nowrap !important;
-  }
+          margin: 0 !important;
+        }
+      }
 
-  .social-links {
-    grid-area: social !important;
+      /* =========================================================
+   FINAL 381–600px MOBILE ADJUSTMENTS
+   ========================================================= */
 
-    position: static !important;
+      @media (min-width: 381px) and (max-width: 600px) {
+        /* ---------- HERO PHOTO ---------- */
 
-    width: 100% !important;
-    margin-top: 8px !important;
+        .hero-image-1 {
+          width: clamp(360px, 90vw, 480px) !important;
+          top: -85px !important;
+          left: 50% !important;
+          right: auto !important;
+          transform: translateX(-50%) !important;
+          margin: 0 !important;
+        }
+        /* ---------- TEXT BELOW HERO PHOTO ---------- */
+        .hero-bottom {
+          margin-top: 230px !important;
+        }
 
-    display: flex !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
+        /* ---------- BIGGER SIGNATURE ---------- */
+        .signature h2 {
+          font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
+        }
+        /* ---------- BIGGER SOCIAL LINKS ---------- */
+        .social-links {
+          font-size: clamp(0.85rem, 3vw, 1.05rem) !important;
+        }
 
-    gap: 4px !important;
+        /* =======================================================
+     WHAT I DO
+     LABEL FIRST → THEN PHOTO
+     ======================================================= */
 
-    font-size: 0.72rem !important;
-    letter-spacing: 0.02em !important;
-  }
-    .services-intro {
-    background: none !important;
-    background-color: transparent !important;
-    overflow: hidden !important;
-    position: relative !important;
-    display: block !important;
-    min-height: 320px !important;
-  }
+        .services {
+          grid-template-columns: 1fr 1fr !important;
+        }
 
-  .services-photo {
-    display: block !important;
-    width: 100% !important;
-    max-width: none !important;
-    height: 320px !important;
+        .services-intro {
+          grid-column: 1 / -1 !important;
+          grid-row: 1 !important;
 
-    object-fit: cover !important;
-    object-position: center 20% !important;
+          background: transparent !important;
+          background-color: transparent !important;
 
-    margin: 0 !important;
-  }
+          position: relative !important;
+          overflow: visible !important;
 
-}
+          width: 100% !important;
+          min-height: 0 !important;
+          height: auto !important;
 
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: stretch !important;
+        }
 
+        /* LABEL ABOVE PHOTO — SEPARATE BLOCK */
+        .services-label {
+          position: static !important;
 
+          width: 100% !important;
+          max-width: 100% !important;
+
+          box-sizing: border-box !important;
+
+          font-size: 1.5rem !important;
+          line-height: 1.05 !important;
+
+          padding: 24px 20px !important;
+
+          margin: 0 0 12px 0 !important;
+
+          z-index: 3 !important;
+        }
+
+        /* PHOTO */
+        .services-photo {
+          display: block !important;
+
+          width: 100% !important;
+          max-width: none !important;
+
+          height: auto !important;
+
+          margin: -85px 0 0 !important;
+
+          object-fit: cover !important;
+          object-position: center 20% !important;
+
+          transform: none !important;
+          transform-origin: center center !important;
+
+          z-index: 1 !important;
+        }
+      }
     </style>
     <link
       rel="icon"
