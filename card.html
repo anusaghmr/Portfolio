@@ -326,7 +326,7 @@
 </style>
 
 <script>
-  function saveContact() {
+  async function saveContact() {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Anusha Ghimire
@@ -347,6 +347,27 @@ END:VCARD`;
     const blob = new Blob([vcard], {
       type: "text/vcard;charset=utf-8",
     });
+
+    const file = new File([blob], "Anusha-Ghimire.vcf", {
+      type: "text/vcard",
+    });
+
+    if (
+      navigator.share &&
+      navigator.canShare &&
+      navigator.canShare({ files: [file] })
+    ) {
+      try {
+        await navigator.share({
+          title: "Anusha Ghimire",
+          text: "Contact details for Anusha Ghimire",
+          files: [file],
+        });
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
 
     const url = URL.createObjectURL(blob);
 
