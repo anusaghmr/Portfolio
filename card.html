@@ -327,13 +327,33 @@
 
 <script>
   async function saveContact() {
+    let photo = "";
+
+    try {
+      const response = await fetch("assets/images/AnushaGhimire4.png");
+      const imageBlob = await response.blob();
+      const imageBuffer = await imageBlob.arrayBuffer();
+      const imageBytes = new Uint8Array(imageBuffer);
+      let binary = "";
+
+      for (let index = 0; index < imageBytes.length; index += 1) {
+        binary += String.fromCharCode(imageBytes[index]);
+      }
+
+      photo = btoa(binary)
+        .match(/.{1,75}/g)
+        .join("\n ");
+    } catch (error) {
+      photo = "";
+    }
+
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Anusha Ghimire
 N:Ghimire;Anusha;;;
 ORG:Sunway College Kathmandu
 TITLE:Creator, AI Student & Public Speaker
-TEL;TYPE=CELL:+9779768992109
+${photo ? `PHOTO;ENCODING=b;TYPE=PNG:${photo}\n` : ""}TEL;TYPE=CELL:+9779768992109
 EMAIL;TYPE=INTERNET:heyyanusha@gmail.com
 ADR;TYPE=HOME:;;Gaushala;Kathmandu;;Nepal
 URL:https://anushaghimire.com.np/
