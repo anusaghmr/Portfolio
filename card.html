@@ -326,23 +326,23 @@
 </style>
 
 <script>
-  async function saveContact() {
+  function saveContact() {
     let photo = "";
 
     try {
-      const response = await fetch("assets/images/AnushaGhimire4.png");
-      const imageBlob = await response.blob();
-      const imageBuffer = await imageBlob.arrayBuffer();
-      const imageBytes = new Uint8Array(imageBuffer);
-      let binary = "";
+      const image = document.querySelector(".contact-photo img");
+      const canvas = document.createElement("canvas");
 
-      for (let index = 0; index < imageBytes.length; index += 1) {
-        binary += String.fromCharCode(imageBytes[index]);
+      if (image.complete && image.naturalWidth > 0) {
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        photo = canvas
+          .toDataURL("image/png")
+          .split(",")[1]
+          .match(/.{1,75}/g)
+          .join("\n ");
       }
-
-      photo = btoa(binary)
-        .match(/.{1,75}/g)
-        .join("\n ");
     } catch (error) {
       photo = "";
     }
@@ -378,7 +378,7 @@ END:VCARD`;
       navigator.canShare({ files: [file] })
     ) {
       try {
-        await navigator.share({
+        navigator.share({
           title: "Anusha Ghimire",
           text: "Contact details for Anusha Ghimire",
           files: [file],

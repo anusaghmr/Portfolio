@@ -1155,49 +1155,71 @@
           top: 8px;
           right: 8px;
         }
+
+        .card-popup-widget {
+          right: 16px;
+          bottom: max(16px, env(safe-area-inset-bottom));
+        }
+
+        .card-popup {
+          position: fixed;
+          inset: 12px 12px max(12px, env(safe-area-inset-bottom));
+          width: auto;
+          height: min(780px, calc(100dvh - 104px));
+          max-height: none;
+          border-radius: 14px;
+        }
+
+        .card-popup-trigger {
+          width: 54px;
+          height: 54px;
+        }
+
+        body.menu-open,
+        body.card-open {
+          overflow: hidden;
+        }
+
+        .contact-grid {
+          gap: 28px;
+        }
+
+        .contact-grid img {
+          width: min(240px, 80vw);
+        }
+
+        .social-icon {
+          width: 44px;
+          height: 44px;
+        }
+
+        .social-card h4 {
+          font-size: 1.05rem;
+        }
+
+        .social-card p,
+        .footer-grid p,
+        .footer-grid a {
+          overflow-wrap: anywhere;
+        }
+
+        .featured-work-list li {
+          grid-template-columns: 36px 1fr;
+          gap: 8px;
+          min-height: 76px;
+          padding: 12px 0;
+        }
+
+        .work-platforms {
+          grid-column: 2;
+        }
+
+        .work-number {
+          padding-left: 8px;
+        }
+
         header {
           padding: 16px 18px;
-        }
-      }
-
-      .services-photo {
-        display: none;
-      }
-      @media (max-width: 600px) {
-        .services-intro {
-          grid-column: 1 / -1;
-          grid-row: auto;
-        }
-        .services {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .services .service-card {
-          grid-column: auto;
-          grid-row: auto;
-        }
-        .services-photo {
-          display: block;
-          width: min(100%, 320px);
-          height: auto;
-          max-width: 100%;
-          margin: 10px auto;
-          object-fit: contain;
-        }
-      }
-
-      @media (min-width: 381px) and (max-width: 600px) {
-        .hero-image-1 {
-          position: absolute !important;
-          top: 30% !important;
-          left: -20% !important;
-          right: auto !important;
-          width: 350px !important;
-          height: auto !important;
-          transform: translateY(3px) !important;
-          animation: none !important;
-          grid-area: photos;
-          margin: 0;
-          z-index: 2;
         }
       }
 
@@ -1472,86 +1494,6 @@
         display: block;
       }
 
-      /* 600 */
-
-      /* Mobile */
-      @media (max-width: 600px) {
-        .card-popup-widget {
-          right: 16px;
-          bottom: max(16px, env(safe-area-inset-bottom));
-        }
-
-        .card-popup {
-          position: fixed;
-          inset: 12px 12px max(12px, env(safe-area-inset-bottom));
-          width: auto;
-          height: min(780px, calc(100dvh - 104px));
-          max-height: none;
-          border-radius: 14px;
-        }
-
-        .card-popup-trigger {
-          width: 54px;
-          height: 54px;
-        }
-
-        body.menu-open,
-        body.card-open {
-          overflow: hidden;
-        }
-
-        .contact-grid {
-          gap: 28px;
-        }
-        .contact-grid img {
-          width: min(240px, 80vw);
-        }
-        .social-links {
-          font-size: 0.78rem !important;
-          white-space: nowrap !important;
-          flex-wrap: nowrap !important;
-          gap: 5px !important;
-        }
-
-        .signature {
-          padding: 1px 0 2px;
-          top: 1px;
-          transform: translateY(-15px);
-        }
-
-        .signature h2 {
-          font-size: clamp(2rem, 14vw, 2.2rem);
-          white-space: nowrap;
-          overflow-wrap: anywhere;
-        }
-        .social-icon {
-          width: 44px;
-          height: 44px;
-        }
-        .social-card h4 {
-          font-size: 1.05rem;
-        }
-        .social-card p {
-          overflow-wrap: anywhere;
-        }
-        .featured-work-list li {
-          grid-template-columns: 36px 1fr;
-          gap: 8px;
-          min-height: 76px;
-          padding: 12px 0;
-        }
-        .work-platforms {
-          grid-column: 2;
-        }
-        .work-number {
-          padding-left: 8px;
-        }
-        .footer-grid p,
-        .footer-grid a {
-          overflow-wrap: anywhere;
-        }
-      }
-
       /* ================================
          SOCIAL CARDS
       ================================ */
@@ -1641,18 +1583,6 @@
         transform: translate(3px, -3px);
       }
 
-      /* Mobile */
-
-      @media (max-width: 600px) {
-        .social-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .social-card {
-          min-height: 90px;
-        }
-      }
-
       /* =========================================================
    FINAL RESPONSIVE HERO SYSTEM
    ========================================================= */
@@ -1694,44 +1624,67 @@
 
       @media (min-width: 901px) and (max-width: 1200px) {
         .hero {
-          min-height: 850px;
-          padding: 70px 40px 50px;
-          justify-content: flex-start;
+          position: relative !important;
+          min-height: 850px !important;
+          padding: 70px 40px 50px !important;
+          justify-content: flex-start !important;
+          overflow: hidden !important;
         }
 
         .hero-headline {
-          font-size: clamp(4rem, 7vw, 5.5rem);
-          max-width: 65%;
-          margin-top: 50px;
+          position: relative !important;
+          z-index: 3 !important;
+
+          font-size: clamp(4rem, 7vw, 5.5rem) !important;
+          max-width: 55% !important;
+          margin-top: 50px !important;
         }
 
         .hero-image-1 {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+
           position: absolute !important;
-          width: clamp(300px, 32vw, 380px) !important;
-          top: 22% !important;
-          right: 50% !important;
+
+          width: clamp(480px, 50vw, 650px) !important;
+          max-width: none !important;
+          height: auto !important;
+
+          top: 8% !important;
+          right: 20% !important;
           left: auto !important;
+          bottom: auto !important;
+
           margin: 0 !important;
-          transform: none !important;
+
+          z-index: 2 !important;
+
           animation: floaty 6s ease-in-out infinite !important;
         }
 
         .hero-bottom {
-          margin-top: auto;
-          gap: 30px;
+          position: relative !important;
+          z-index: 4 !important;
+
+          width: 100% !important;
+          margin-top: auto !important;
+          gap: 30px !important;
         }
 
         .hero-copy {
-          max-width: 330px;
-          font-size: 1rem;
+          max-width: 330px !important;
+          font-size: 1rem !important;
         }
 
         .signature {
-          margin-top: 100px;
+          margin-top: 100px !important;
         }
 
         .social-links {
-          margin-top: 24px;
+          position: relative !important;
+          z-index: 4 !important;
+          margin-top: 24px !important;
         }
       }
 
@@ -1753,8 +1706,8 @@
         .hero-image-1 {
           position: absolute !important;
           width: clamp(320px, 40vw, 400px) !important;
-          top: 15% !important;
-          right: 10% !important;
+          top: 25% !important;
+          right: 20% !important;
           left: auto !important;
           margin: 0 !important;
           transform: none !important;
@@ -1946,75 +1899,69 @@
           max-width: 70% !important;
         }
 
-        @media (min-width: 381px) and (max-width: 600px) {
-          .services {
-            grid-template-columns: 1fr 1fr !important;
-          }
+        .hero-image-1 {
+          width: clamp(360px, 90vw, 480px) !important;
+          top: -85px !important;
+          left: 50% !important;
+          right: auto !important;
+          transform: translateX(-50%) !important;
+          margin: 0 !important;
+        }
 
-          .services-intro {
-            grid-column: 1 / -1 !important;
-            grid-row: 1 !important;
+        .hero-bottom {
+          margin-top: 230px !important;
+        }
 
-            background: transparent !important;
-            background-color: transparent !important;
+        .signature h2 {
+          font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
+        }
 
-            position: relative !important;
-            overflow: hidden !important;
+        .social-links {
+          font-size: clamp(0.85rem, 3vw, 1.05rem) !important;
+        }
 
-            /* same ratio as 380, but scales with screen width */
-            width: 100% !important;
-            aspect-ratio: 1 / 1 !important;
-            min-height: 0 !important;
-            height: auto !important;
+        .services {
+          grid-template-columns: 1fr 1fr !important;
+        }
 
-            display: block !important;
-          }
+        .services-intro {
+          grid-column: 1 / -1 !important;
+          grid-row: 1 !important;
+          background: transparent !important;
+          background-color: transparent !important;
+          position: relative !important;
+          overflow: visible !important;
+          width: 100% !important;
+          min-height: 0 !important;
+          height: auto !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: stretch !important;
+        }
 
-          .services-photo {
-            display: block !important;
+        .services-label {
+          position: static !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+          font-size: 1.5rem !important;
+          line-height: 1.05 !important;
+          padding: 24px 20px !important;
+          margin: 0 0 12px 0 !important;
+          z-index: 3 !important;
+        }
 
-            width: 100% !important;
-            height: 100% !important;
-            max-width: none !important;
-
-            margin: 0 !important;
-
-            object-fit: cover !important;
-            object-position: center 20% !important;
-
-            /* zoom */
-            transform: scale(1.25) !important;
-            transform-origin: center center !important;
-          }
-
-          .services-label {
-            display: block !important;
-            position: absolute !important;
-
-            left: 20px !important;
-            top: -55px !important;
-            bottom: auto !important;
-
-            width: fit-content !important;
-
-            font-size: 1.5rem !important;
-            line-height: 1.05 !important;
-            padding: 18px 20px !important;
-
-            z-index: 3 !important;
-          }
-
-          /* let the first writing/card come slightly over the photo */
-          /* .services-intro + .service-card {
-    margin-top: -30px !important;
-    position: relative !important;
-    z-index: 4 !important;
-  }
-
-  .services .service-card {
-    position: relative !important;
-    z-index: 2 !important;
-  } */
+        .services-photo {
+          display: block !important;
+          width: 100% !important;
+          max-width: none !important;
+          height: auto !important;
+          margin: -85px 0 0 !important;
+          object-fit: cover !important;
+          object-position: center 20% !important;
+          transform: none !important;
+          transform-origin: center center !important;
+          z-index: 1 !important;
         }
       }
 
@@ -2140,103 +2087,6 @@
           object-position: center 20% !important;
 
           margin: 0 !important;
-        }
-      }
-
-      /* =========================================================
-   FINAL 381–600px MOBILE ADJUSTMENTS
-   ========================================================= */
-
-      @media (min-width: 381px) and (max-width: 600px) {
-        /* ---------- HERO PHOTO ---------- */
-
-        .hero-image-1 {
-          width: clamp(360px, 90vw, 480px) !important;
-          top: -85px !important;
-          left: 50% !important;
-          right: auto !important;
-          transform: translateX(-50%) !important;
-          margin: 0 !important;
-        }
-        /* ---------- TEXT BELOW HERO PHOTO ---------- */
-        .hero-bottom {
-          margin-top: 230px !important;
-        }
-
-        /* ---------- BIGGER SIGNATURE ---------- */
-        .signature h2 {
-          font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
-        }
-        /* ---------- BIGGER SOCIAL LINKS ---------- */
-        .social-links {
-          font-size: clamp(0.85rem, 3vw, 1.05rem) !important;
-        }
-
-        /* =======================================================
-     WHAT I DO
-     LABEL FIRST → THEN PHOTO
-     ======================================================= */
-
-        .services {
-          grid-template-columns: 1fr 1fr !important;
-        }
-
-        .services-intro {
-          grid-column: 1 / -1 !important;
-          grid-row: 1 !important;
-
-          background: transparent !important;
-          background-color: transparent !important;
-
-          position: relative !important;
-          overflow: visible !important;
-
-          width: 100% !important;
-          min-height: 0 !important;
-          height: auto !important;
-
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: stretch !important;
-        }
-
-        /* LABEL ABOVE PHOTO — SEPARATE BLOCK */
-        .services-label {
-          position: static !important;
-
-          width: 100% !important;
-          max-width: 100% !important;
-
-          box-sizing: border-box !important;
-
-          font-size: 1.5rem !important;
-          line-height: 1.05 !important;
-
-          padding: 24px 20px !important;
-
-          margin: 0 0 12px 0 !important;
-
-          z-index: 3 !important;
-        }
-
-        /* PHOTO */
-        .services-photo {
-          display: block !important;
-
-          width: 100% !important;
-          max-width: none !important;
-
-          height: auto !important;
-
-          margin: -85px 0 0 !important;
-
-          object-fit: cover !important;
-          object-position: center 20% !important;
-
-          transform: none !important;
-          transform-origin: center center !important;
-
-          z-index: 1 !important;
         }
       }
     </style>
