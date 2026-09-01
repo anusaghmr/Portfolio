@@ -9,27 +9,42 @@
       content="Anusha Ghimire is a Computer Science with AI student, content creator, public speaker, and emcee from Nepal exploring technology, storytelling, digital media, and creative communication."
     />
     <link rel="canonical" href="https://anushaghimire.com.np/" />
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Anusha Ghimire | AI Student, Content Creator & Public Speaker" />
+    <meta
+      property="og:title"
+      content="Anusha Ghimire | AI Student, Content Creator & Public Speaker"
+    />
     <meta
       property="og:description"
       content="Portfolio of Anusha Ghimire — AI student, content creator, public speaker, and emcee exploring technology, storytelling, and digital media."
     />
     <meta property="og:url" content="https://anushaghimire.com.np/" />
-    <meta property="og:image" content="https://anushaghimire.com.np/assets/images/AnushaGhimire3.png" />
+    <meta
+      property="og:image"
+      content="https://anushaghimire.com.np/assets/images/AnushaGhimire3.png"
+    />
     <meta property="og:site_name" content="Anusha Ghimire" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Anusha Ghimire | AI Student, Content Creator & Public Speaker" />
+    <meta
+      name="twitter:title"
+      content="Anusha Ghimire | AI Student, Content Creator & Public Speaker"
+    />
     <meta
       name="twitter:description"
       content="Portfolio of Anusha Ghimire — AI student, content creator, public speaker, and emcee."
     />
-    <meta name="twitter:image" content="https://anushaghimire.com.np/assets/images/AnushaGhimire3.png" />
+    <meta
+      name="twitter:image"
+      content="https://anushaghimire.com.np/assets/images/AnushaGhimire3.png"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -151,23 +166,31 @@
         color: var(--maroon-deep);
         cursor: pointer;
         line-height: 1;
+        min-width: 44px;
+        min-height: 44px;
       }
       .mobile-menu {
-        display: none;
+        display: block;
         position: fixed;
         top: 0;
         right: 0;
         width: min(80vw, 320px);
-        height: 100vh;
+        height: 100dvh;
+        max-height: 100svh;
         background: var(--lavender-light);
         z-index: 200;
         padding: 24px;
+        overflow-y: auto;
+        visibility: hidden;
+        pointer-events: none;
         transform: translateX(100%);
         transition: transform 0.3s ease;
         box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
       }
       .mobile-menu.open {
         transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
       }
       .mobile-menu-close {
         background: none;
@@ -178,6 +201,8 @@
         display: block;
         margin-left: auto;
         margin-bottom: 30px;
+        min-width: 44px;
+        min-height: 44px;
       }
       .mobile-menu ul {
         list-style: none;
@@ -244,16 +269,38 @@
         filter: drop-shadow(0 30px 40px rgba(94, 36, 57, 0.18));
         animation: floaty 6s ease-in-out infinite;
       }
-        .hero-image-3 {
+      .hero-image-3 {
         position: absolute;
-        right: 22%;
-        top: 5%;
-        width: max (1200vw, 1200px);
+        right: -12%;
+        width: 85vw;
+        max-width: 1200px;
+        top: -45%;
         z-index: 3;
         filter: drop-shadow(0 30px 40px rgba(94, 36, 57, 0.18));
         animation: floaty 6s ease-in-out infinite;
-    }
-     @keyframes floaty {
+      }
+      @keyframes floaty {
+        0% {
+          transform: translateY(0);
+        }
+
+        15% {
+          transform: translateY(-12px);
+        }
+
+        50% {
+          transform: translateY(0);
+        }
+
+        85% {
+          transform: translateY(12px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+      /* @keyframes floaty {
         0%,
         100% {
           transform: translateY(0) rotate(0deg);
@@ -261,7 +308,7 @@
         50% {
           transform: translateY(-16px) rotate(-2deg);
         }
-      }
+      } */
       .hero-bottom {
         display: flex;
         justify-content: space-between;
@@ -437,7 +484,6 @@
         grid-row: 3;
       }
 
-
       .story-title {
         background: #5e2439;
         padding: 60px 48px 40px;
@@ -548,6 +594,11 @@
         opacity: 0.5;
       }
 
+      :focus-visible {
+        outline: 3px solid var(--orange);
+        outline-offset: 4px;
+      }
+
       .clients-title {
         /* background: #5e2439; */
         background: white;
@@ -569,7 +620,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 30px ;
+        padding: 30px;
         background: var(--lavender-mid);
       }
       .featured-work-image img {
@@ -604,7 +655,9 @@
         min-height: 72px;
         padding: 0 24px 0 0;
         border-bottom: 1px solid var(--line);
-        transition: background 0.25s ease, padding-left 0.25s ease;
+        transition:
+          background 0.25s ease,
+          padding-left 0.25s ease;
       }
 
       .work-number {
@@ -623,7 +676,9 @@
         color: var(--maroon);
         opacity: 0.6;
         letter-spacing: 0.04em;
-        transition: color 0.25s ease, opacity 0.25s ease;
+        transition:
+          color 0.25s ease,
+          opacity 0.25s ease;
       }
 
       .featured-work-list li:hover {
@@ -640,7 +695,7 @@
       .featured-work-list li:hover .work-number {
         color: var(--orange);
       }
-     .clients-grid {
+      .clients-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         border-bottom: 1px solid var(--line);
@@ -661,7 +716,7 @@
       }
       /* .client-card:hover {
         background: var(--lavender-light); */
-      
+
       .work-strip {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -799,6 +854,14 @@
       }
 
       @media (max-width: 900px) {
+        .hero,
+        .services,
+        .story-grid,
+        .featured-work-grid,
+        .contact-grid,
+        .footer-grid {
+          min-width: 0;
+        }
         nav ul {
           display: none;
         }
@@ -808,22 +871,46 @@
         .hero-image-1,
         .hero-image-2,
         .hero-image-3 {
-        position: static;
-        width: 78%;
-        margin: 28px auto 0;
-        display: block;
+          position: absolute;
+          display: block;
         }
         .hero {
-          padding: 50px 24px 40px;
-          min-height: auto;
+          padding: 64px 24px 44px;
+          min-height: clamp(720px, 92vh, 900px);
+          justify-content: flex-start;
+        }
+        .hero-headline {
+          max-width: 55%;
+        }
+        .hero-image-1 {
+          right: 27%;
+          top: 22%;
+          width: min(30vw, 300px);
+        }
+        .hero-image-2 {
+          right: -5%;
+          top: 24%;
+          width: min(64vw, 560px);
+        }
+        .hero-image-3 {
+          right: -12%;
+          top: -45%;
+          width: 85vw;
+          max-width: 1200px;
         }
         .hero-bottom {
-          flex-direction: column;
-          align-items: flex-start;
+          margin-top: auto;
+          align-items: flex-end;
+          min-width: 0;
+        }
+        .social-links {
+          flex-wrap: wrap;
+          row-gap: 8px;
         }
         .btn-orange {
           width: 100%;
           justify-content: center;
+          min-height: 48px;
         }
         .stat-row {
           padding: 30px 24px;
@@ -863,6 +950,7 @@
           width: 100%;
           justify-content: center;
           align-self: stretch;
+          min-height: 48px;
         }
         .clients-grid {
           grid-template-columns: 1fr 1fr;
@@ -891,21 +979,86 @@
 
       @media (max-width: 600px) {
         .logo {
-          font-size: 1rem;
+          font-size: 1.8rem;
         }
         .hero {
           padding: 36px 20px 30px;
           background-size: 36px 36px;
+          min-height: 0;
+          overflow: visible;
+          min-width: 0;
         }
         .hero-headline {
           font-size: clamp(2.1rem, 9vw, 2.8rem);
           letter-spacing: -0.5px;
+          max-width: none;
+          margin-top: 12px;
         }
         .hero-image-1,
         .hero-image-2,
         .hero-image-3 {
-          width: 78%;
-          margin: 28px auto 0;
+          position: absolute;
+          inset: auto;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          align-self: start;
+          margin: 0;
+          object-fit: contain;
+          transform: none;
+        }
+        .hero {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-areas:
+          "headline"
+          "photos"
+          "bottom"
+          "social";
+          align-content: start;
+        }
+        .hero-headline {
+          grid-area: headline;
+        }
+        .hero-image-1 {
+          grid-area: photos;
+          width: min(48vw, 190px);
+          margin-top: 8px;
+          margin-left: 4%;
+          z-index: 2;
+        }
+
+        .hero-image-2 {
+          grid-area: photos;
+          width: min(78vw, 300px);
+          margin-top: 8px;
+          margin-left: 0;
+          z-index: 1;
+        }
+
+        .hero-image-3 {
+          grid-area: photos;
+          width: min(58vw, 230px);
+          max-height: min(420px, 92vw);
+          margin-top: -12%;
+          margin-left: 18%;
+          z-index: 3;
+}
+        .hero-bottom {
+          grid-area: bottom;
+          margin-top: 180px;
+          gap: 12px;
+          align-items: flex-start;
+          min-width: 0;
+        }
+        .social-links {
+          grid-area: social;
+          flex-wrap: wrap;
+          gap: 7px;
+          margin-top: 20px;
+          font-size: 0.9rem;
+          letter-spacing: 0.04em;
+          overflow-wrap: anywhere;
         }
         .hero-copy {
           font-size: 0.92rem;
@@ -964,6 +1117,7 @@
         .instagram-btn {
           width: 100%;
           text-align: center;
+          min-height: 48px;
         }
         .story-image {
           padding: 24px 20px;
@@ -988,6 +1142,8 @@
         }
         .signature h2 {
           font-size: clamp(2rem, 14vw, 3.5rem);
+          white-space: normal;
+          overflow-wrap: anywhere;
         }
         .clients-grid {
           grid-template-columns: 1fr;
@@ -1022,10 +1178,79 @@
         .footer-grid h4 {
           font-size: 1.15rem;
         }
+        .card-popup-close {
+          top: 8px;
+          right: 8px;
+        }
         header {
           padding: 16px 18px;
         }
       }
+
+      @media (max-width: 380px) {
+  .hero {
+    position: relative !important;
+    z-index: 10 !important;
+    padding-bottom: 10px !important;
+  }
+
+  .stats {
+    margin-top: 0 !important;
+  }
+
+.social-links {
+  font-size: 0.78rem !important;
+  white-space: nowrap !important;
+  flex-wrap: nowrap !important;
+  gap: 5px !important;
+}
+
+.hero-image-1 {
+  position: absolute !important;
+  top: 65% !important;
+  left: -10% !important;
+  right: auto !important;
+
+  transform: translateY(30px) !important;
+  animation: none !important;
+}
+
+.hero-image-2 {
+  position: absolute !important;
+  top: 80% !important;
+  left: 30% !important;
+  right: auto !important;
+
+  transform: translateY(30px) !important;
+  animation: none !important;
+}
+
+  .hero-image-3 {
+    position: absolute !important;
+    width: 500px !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    top: 80% !important;
+    right: -35% !important;
+    left: auto !important;
+
+    margin: 0 !important;
+    transform: translateY(-280px) !important;
+    animation: none !important;
+
+    z-index: 3 !important;
+  }
+
+  .hero-copy {
+    font-size: 0.92rem;
+    max-width: 100%;
+    position: relative;
+    top: 230px;
+  }
+}
+
       .instagram-section {
         background: var(--bg-pale);
       }
@@ -1067,198 +1292,271 @@
         background: var(--maroon-deep);
         color: white;
       }
+
+        .signature {
+          padding: 10px 0 24px;
+        }
+        .signature h2 {
+          font-size: clamp(2rem, 14vw, 2.2rem);
+          white-space: nowrap;
+          overflow-wrap: anywhere;
+        }
       /* ================================
    FLOATING CARD POPUP
    ================================ */
 
-.card-popup-widget {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 9999;
-}
+      .card-popup-widget {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 9999;
+        max-width: calc(100vw - 32px);
+      }
 
-/* Floating trigger */
-.card-popup-trigger {
-  width: 58px;
-  height: 58px;
-  border: none;
-  border-radius: 50%;
-  background: var(--maroon);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(74, 28, 45, 0.25);
-  transition: transform 0.25s ease;
-}
+      /* Floating trigger */
+      .card-popup-trigger {
+        width: 58px;
+        height: 58px;
+        border: none;
+        border-radius: 50%;
+        background: var(--maroon);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(74, 28, 45, 0.25);
+        transition: transform 0.25s ease;
+        font-size: 1.8rem;
+        line-height: 1;
+      }
 
-.card-popup-trigger:hover {
-  transform: translateY(-3px);
-}
+      .card-popup-trigger:hover {
+        transform: translateY(-3px);
+      }
 
-/* Popup */
-.card-popup {
-  position: absolute;
-  right: 0;
-  bottom: 72px;
+      /* Popup */
+      .card-popup {
+        position: absolute;
+        right: 0;
+        bottom: 72px;
 
-  width: 700px;
-  height: 780px;
+        width: min(700px, calc(100vw - 48px));
+        height: min(780px, calc(100dvh - 48px));
+        max-height: calc(100svh - 48px);
 
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
 
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
 
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px) scale(0.96);
-  transform-origin: bottom right;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px) scale(0.96);
+        transform-origin: bottom right;
 
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
-}
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease,
+          visibility 0.25s ease;
+      }
 
-/* Open popup */
-.card-popup-widget.open .card-popup {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-}
+      .card-popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--maroon-deep);
+        color: white;
+        font-size: 1.7rem;
+        line-height: 1;
+        cursor: pointer;
+      }
 
-/* iframe */
-.card-popup iframe {
-  width: 86%;
-  height: 100%;
-  border: none;
-  display: block;
-}
+      /* Open popup */
+      .card-popup-widget.open .card-popup {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .card-popup-widget {
-    right: 16px;
-    bottom: 0px;
-  }
+      /* iframe */
+      .card-popup iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
 
-  .card-popup {
-    width: calc(100vw - 32px);
-    height: 80vh;
-    max-height: 600px;
-  }
+      /* Mobile */
+      @media (max-width: 600px) {
+        .card-popup-widget {
+          right: 16px;
+          bottom: max(16px, env(safe-area-inset-bottom));
+        }
 
-  .card-popup-trigger {
-    width: 54px;
-    height: 54px;
-  }
-}
+        .card-popup {
+          position: fixed;
+          inset: 12px 12px max(12px, env(safe-area-inset-bottom));
+          width: auto;
+          height: min(780px, calc(100dvh - 104px));
+          max-height: none;
+          border-radius: 14px;
+        }
 
-/* ================================
+        .card-popup-trigger {
+          width: 54px;
+          height: 54px;
+        }
+      }
+
+      body.menu-open,
+      body.card-open {
+        overflow: hidden;
+      }
+
+      @media (max-width: 600px) {
+        .contact-grid {
+          gap: 28px;
+        }
+        .contact-grid img {
+          width: min(240px, 80vw);
+        }
+        .social-card {
+          padding: 16px;
+          gap: 12px;
+          min-height: 88px;
+        }
+        .social-icon {
+          width: 44px;
+          height: 44px;
+        }
+        .social-card h4 {
+          font-size: 1.05rem;
+        }
+        .social-card p {
+          overflow-wrap: anywhere;
+        }
+        .featured-work-list li {
+          grid-template-columns: 36px 1fr;
+          gap: 8px;
+          min-height: 76px;
+          padding: 12px 0;
+        }
+        .work-platforms {
+          grid-column: 2;
+        }
+        .work-number {
+          padding-left: 8px;
+        }
+        .footer-grid p,
+        .footer-grid a {
+          overflow-wrap: anywhere;
+        }
+      }
+
+      /* ================================
    SOCIAL CARDS
 ================================ */
 
-.social-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  width: 100%;
-}
+      .social-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        width: 100%;
+      }
 
-.social-card {
-  min-height: 105px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+      .social-card {
+        min-height: 105px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
 
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
 
-  position: relative;
-  overflow: hidden;
+        position: relative;
+        overflow: hidden;
 
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
-}
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          color 0.25s ease,
+          border-color 0.25s ease;
+      }
 
-.social-card:hover {
-  background: white;
-  color: var(--maroon-deep);
-  border-color: white;
-  transform: translateY(-4px);
-}
+      .social-card:hover {
+        background: white;
+        color: var(--maroon-deep);
+        border-color: white;
+        transform: translateY(-4px);
+      }
 
-.social-icon {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
+      .social-icon {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  font-size: 1.35rem;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        font-size: 1.35rem;
 
-  transition: all 0.25s ease;
-}
+        transition: all 0.25s ease;
+      }
 
-.social-card:hover .social-icon {
-  background: var(--maroon-deep);
-  color: white;
-  border-color: var(--maroon-deep);
-}
+      .social-card:hover .social-icon {
+        background: var(--maroon-deep);
+        color: white;
+        border-color: var(--maroon-deep);
+      }
 
-.social-card h4 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
+      .social-card h4 {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 3px;
+      }
 
-.social-card p {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  opacity: 0.65;
-}
+      .social-card p {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        opacity: 0.65;
+      }
 
-.social-arrow {
-  position: absolute;
-  top: 12px;
-  right: 16px;
+      .social-arrow {
+        position: absolute;
+        top: 12px;
+        right: 16px;
 
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  opacity: 0.5;
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        opacity: 0.5;
 
-  transition: transform 0.25s ease;
-}
+        transition: transform 0.25s ease;
+      }
 
-.social-card:hover .social-arrow {
-  opacity: 1;
-  transform: translate(3px, -3px);
-}
+      .social-card:hover .social-arrow {
+        opacity: 1;
+        transform: translate(3px, -3px);
+      }
 
+      /* Mobile */
 
-/* Mobile */
+      @media (max-width: 600px) {
+        .social-grid {
+          grid-template-columns: 1fr;
+        }
 
-@media (max-width: 600px) {
-  .social-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .social-card {
-    min-height: 90px;
-  }
-}
-
-
-
+        .social-card {
+          min-height: 90px;
+        }
+      }
     </style>
     <link
       rel="icon"
@@ -1268,32 +1566,32 @@
 
     <!-- Structured data: Person -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Anusha Ghimire",
-      "url": "https://anushaghimire.com.np/",
-      "image": "https://anushaghimire.com.np/assets/images/AnushaGhimire3.png",
-      "jobTitle": "AI Student, Content Creator & Public Speaker",
-      "description": "Anusha Ghimire is a Computer Science with AI student, content creator, public speaker, and emcee from Nepal.",
-      "sameAs": [
-        "https://www.instagram.com/madebyanusa/",
-        "https://github.com/anusaghmr",
-        "https://www.linkedin.com/in/anusaghmr/",
-        "https://medium.com/@anusaghmr/"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anusha Ghimire",
+        "url": "https://anushaghimire.com.np/",
+        "image": "https://anushaghimire.com.np/assets/images/AnushaGhimire3.png",
+        "jobTitle": "AI Student, Content Creator & Public Speaker",
+        "description": "Anusha Ghimire is a Computer Science with AI student, content creator, public speaker, and emcee from Nepal.",
+        "sameAs": [
+          "https://www.instagram.com/madebyanusa/",
+          "https://github.com/anusaghmr",
+          "https://www.linkedin.com/in/anusaghmr/",
+          "https://medium.com/@anusaghmr/"
+        ]
+      }
     </script>
 
     <!-- Structured data: WebSite -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Anusha Ghimire",
-      "url": "https://anushaghimire.com.np/",
-      "description": "Official portfolio of Anusha Ghimire, an AI student, Content Creator, Public Speaker, and emcee."
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Anusha Ghimire",
+        "url": "https://anushaghimire.com.np/",
+        "description": "Official portfolio of Anusha Ghimire, an AI student, Content Creator, Public Speaker, and emcee."
+      }
     </script>
   </head>
   <body id="top">
@@ -1305,90 +1603,37 @@
           <li><a href="#story">About</a></li>
           <li><a href="#clients">Projects</a></li>
           <li><a href="#works">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>        
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <button
         class="nav-toggle"
         aria-label="Open menu"
-        onclick="
-          document.getElementById('mobileMenu').classList.add('open');
-          document.getElementById('menuOverlay').classList.add('open');
-        "
+        aria-controls="mobileMenu"
+        aria-expanded="false"
       >
         &#9776;
       </button>
     </header>
 
-    <div
-      class="menu-overlay"
-      id="menuOverlay"
-      onclick="
-        document.getElementById('mobileMenu').classList.remove('open');
-        this.classList.remove('open');
-      "
-    ></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
-      <button
-        class="mobile-menu-close"
-        aria-label="Close menu"
-        onclick="
-          document.getElementById('mobileMenu').classList.remove('open');
-          document.getElementById('menuOverlay').classList.remove('open');
-        "
-      >
-        &times;
-      </button>
+      <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
       <ul>
         <li>
-          <a
-            href="#services"
-            onclick="
-              document.getElementById('mobileMenu').classList.remove('open');
-              document.getElementById('menuOverlay').classList.remove('open');
-            "
-            >Services</a
-          >
+          <a href="#services">Services</a>
         </li>
         <li>
-          <a
-            href="#story"
-            onclick="
-              document.getElementById('mobileMenu').classList.remove('open');
-              document.getElementById('menuOverlay').classList.remove('open');
-            "
-            >About</a
-          >
+          <a href="#story">About</a>
         </li>
         <li>
-          <a
-            href="#clients"
-            onclick="
-              document.getElementById('mobileMenu').classList.remove('open');
-              document.getElementById('menuOverlay').classList.remove('open');
-            "
-            >Projects</a
-          >
+          <a href="#clients">Projects</a>
         </li>
         <li>
-          <a
-            href="#works"
-            onclick="
-              document.getElementById('mobileMenu').classList.remove('open');
-              document.getElementById('menuOverlay').classList.remove('open');
-            "
-            >Works</a
-          >
+          <a href="#works">Works</a>
         </li>
         <li>
-          <a
-            href="#contact"
-            onclick="
-              document.getElementById('mobileMenu').classList.remove('open');
-              document.getElementById('menuOverlay').classList.remove('open');
-            "
-            >Contact</a
-          >
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -1421,7 +1666,9 @@
         <div class="signature"><h2>ANUSHA GHIMIRE</h2></div>
       </div>
       <div class="social-links">
-        <a href="https://www.instagram.com/madebyanusa/" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/madebyanusa/" target="_blank"
+          >Instagram</a
+        >
         <span>·</span>
         <a href="https://github.com/anusaghmr" target="_blank">GitHub</a>
         <span>·</span>
@@ -1481,16 +1728,16 @@
       <div class="service-card pos-4">
         <h3>Brand<br />Storytelling</h3>
         <p>
-          I shape messages that feel personal, confident, and
-          memorable especially for women in tech and creative spaces.
+          I shape messages that feel personal, confident, and memorable
+          especially for women in tech and creative spaces.
         </p>
       </div>
       <div class="service-card pos-5">
-      <h3>Communication<br />& People</h3>
-      <p>
-        I enjoy turning ideas into conversations, presentations, and experiences
-        that make people want to listen.
-      </p>      
+        <h3>Communication<br />& People</h3>
+        <p>
+          I enjoy turning ideas into conversations, presentations, and
+          experiences that make people want to listen.
+        </p>
       </div>
       <div class="service-card pos-6">
         <h3>Social Media<br />Presence</h3>
@@ -1529,7 +1776,10 @@
     </section>
     <section class="story-grid">
       <div class="story-image">
-        <img src="assets/images/AnushaGhimire6.png" alt="Anusha Ghimire, AI student and content creator" />
+        <img
+          src="assets/images/AnushaGhimire6.png"
+          alt="Anusha Ghimire, AI student and content creator"
+        />
       </div>
       <div class="story-text">
         <div class="corner-arrow">
@@ -1545,18 +1795,17 @@
           </svg> -->
         </div>
         <p>
-          I'm Anusha Ghimire, a Computer Science with AI student from Nepal
-          with an interest in artificial intelligence, content creation,
-          digital media, and public speaking. My work lives between code and
-          camera.
+          I'm Anusha Ghimire, a Computer Science with AI student from Nepal with
+          an interest in artificial intelligence, content creation, digital
+          media, and public speaking. My work lives between code and camera.
         </p>
         <p>
           I explore technology through AI and software projects while also
           creating digital content, hosting events, and speaking on stages. I
-          enjoy turning technical ideas into stories and experiences that
-          people can understand, connect with, and remember.
+          enjoy turning technical ideas into stories and experiences that people
+          can understand, connect with, and remember.
         </p>
-       <button class="btn-maroon" onclick="window.location.href='#contact'">
+        <button class="btn-maroon" onclick="window.location.href = '#contact'">
           Let&rsquo;s work together
           <!-- <svg
             viewBox="0 0 24 24"
@@ -1577,73 +1826,99 @@
     </section>
     <section class="featured-work-grid">
       <div class="featured-work-image">
-        <img src="assets/images/AnushaGhimire7.jpg" alt="Anusha Ghimire featured creative work" />
+        <img
+          src="assets/images/AnushaGhimire7.jpg"
+          alt="Anusha Ghimire featured creative work"
+        />
       </div>
       <div class="featured-work-content">
         <h3>What I've Created</h3>
-          <ul class="featured-work-list">
+        <ul class="featured-work-list">
+          <li>
+            <span class="work-number">01</span>
+            <span class="work-title">AI & Tech Projects</span>
+            <span class="work-platforms">
+              <a href="https://www.github.com/anusaghmr/" target="_blank"
+                >GitHub</a
+              >
+              <span>·</span>
+              <a href="https://www.linkedin.com/in/anusaghmr/" target="_blank"
+                >LinkedIn</a
+              >
+            </span>
+          </li>
 
-            <li>
-              <span class="work-number">01</span>
-              <span class="work-title">AI & Tech Projects</span>
-              <span class="work-platforms">
-                <a href="https://www.github.com/anusaghmr/" target="_blank">GitHub</a>
-                <span>·</span>
-                <a href="https://www.linkedin.com/in/anusaghmr/" target="_blank">LinkedIn</a>
-              </span>
-            </li>
+          <li>
+            <span class="work-number">02</span>
+            <span class="work-title">Content & Reels</span>
+            <span class="work-platforms">
+              <a href="https://www.instagram.com/madebyanusa/" target="_blank"
+                >Instagram</a
+              >
+            </span>
+          </li>
 
-            <li>
-              <span class="work-number">02</span>
-              <span class="work-title">Content & Reels</span>
-              <span class="work-platforms">
-                <a href="https://www.instagram.com/madebyanusa/" target="_blank">Instagram</a>
-              </span>
-            </li>
+          <li>
+            <span class="work-number">03</span>
+            <span class="work-title">Public Speaking</span>
+            <span class="work-platforms">
+              <a
+                href="https://drive.google.com/drive/u/0/folders/1Vo4A-FWJ4meeT3T2SSdbC6hyx6GYZT1R"
+                target="_blank"
+                >Drive</a
+              >
+              <span>·</span>
+              <a href="https://www.linkedin.com/in/anusaghmr/" target="_blank"
+                >LinkedIn</a
+              >
+            </span>
+          </li>
 
-            <li>
-              <span class="work-number">03</span>
-              <span class="work-title">Public Speaking</span>
-              <span class="work-platforms">
-                <a href="https://drive.google.com/drive/u/0/folders/1Vo4A-FWJ4meeT3T2SSdbC6hyx6GYZT1R"
-                  target="_blank">Drive</a>
-                <span>·</span>
-                <a href="https://www.linkedin.com/in/anusaghmr/" target="_blank">LinkedIn</a>
-              </span>
-            </li>
+          <li>
+            <span class="work-number">04</span>
+            <span class="work-title">Event Hosting</span>
+            <span class="work-platforms">
+              <a
+                href="https://drive.google.com/drive/u/0/folders/1Vo4A-FWJ4meeT3T2SSdbC6hyx6GYZT1R"
+                target="_blank"
+                >Drive</a
+              >
+              <span>·</span>
+              <a href="https://www.instagram.com/madebyanusa/" target="_blank"
+                >Instagram</a
+              >
+            </span>
+          </li>
 
-            <li>
-              <span class="work-number">04</span>
-              <span class="work-title">Event Hosting</span>
-              <span class="work-platforms">
-                <a href="https://drive.google.com/drive/u/0/folders/1Vo4A-FWJ4meeT3T2SSdbC6hyx6GYZT1R"
-                  target="_blank">Drive</a>
-                <span>·</span>
-                <a href="https://www.instagram.com/madebyanusa/" target="_blank">Instagram</a>
-              </span>
-            </li>
+          <li>
+            <span class="work-number">05</span>
+            <span class="work-title">Digital Storytelling</span>
+            <span class="work-platforms">
+              <a href="https://www.instagram.com/madebyanusa/" target="_blank"
+                >Instagram</a
+              >
+              <span>·</span>
+              <a href="https://medium.com/@anusaghmr/" target="_blank"
+                >Medium</a
+              >
+            </span>
+          </li>
 
-            <li>
-              <span class="work-number">05</span>
-              <span class="work-title">Digital Storytelling</span>
-              <span class="work-platforms">
-                <a href="https://www.instagram.com/madebyanusa/" target="_blank">Instagram</a>
-                <span>·</span>
-                <a href="https://medium.com/@anusaghmr/" target="_blank">Medium</a>
-              </span>
-            </li>
-
-            <li>
-              <span class="work-number">06</span>
-              <span class="work-title">Tech Communication</span>
-              <span class="work-platforms">
-                <a href="https://www.linkedin.com/in/anusaghmr/" target="_blank">LinkedIn</a>
-                <span>·</span>
-                <a href="https://medium.com/@anusaghmr/" target="_blank">Medium</a>
-              </span>
-            </li>
-          </ul>      
-        </div>
+          <li>
+            <span class="work-number">06</span>
+            <span class="work-title">Tech Communication</span>
+            <span class="work-platforms">
+              <a href="https://www.linkedin.com/in/anusaghmr/" target="_blank"
+                >LinkedIn</a
+              >
+              <span>·</span>
+              <a href="https://medium.com/@anusaghmr/" target="_blank"
+                >Medium</a
+              >
+            </span>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="instagram-section" id="instagram">
@@ -1715,120 +1990,118 @@
       <h2>Contact Me</h2>
       <hr class="contact-hr" />
       <div class="contact-grid">
-      <img
-        src="assets/images/AnushaGhimire3.png"
-        alt="Portrait of Anusha Ghimire"
-      />
+        <img
+          src="assets/images/AnushaGhimire3.png"
+          alt="Portrait of Anusha Ghimire"
+        />
 
         <div class="social-grid">
+          <a
+            href="https://www.instagram.com/madebyanusa/"
+            target="_blank"
+            class="social-card"
+            aria-label="Instagram"
+          >
+            <div class="social-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div>
+              <h4>Instagram</h4>
+              <p>@madebyanusa</p>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
 
-        <a
-          href="https://www.instagram.com/madebyanusa/"
-          target="_blank"
-          class="social-card"
-          aria-label="Instagram"
-        >
-          <div class="social-icon">
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-          <div>
-            <h4>Instagram</h4>
-            <p>@madebyanusa</p>
-          </div>
-          <span class="social-arrow">↗</span>
-        </a>
+          <a
+            href="https://github.com/anusaghmr"
+            target="_blank"
+            class="social-card"
+            aria-label="GitHub"
+          >
+            <div class="social-icon">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div>
+              <h4>GitHub</h4>
+              <p>@anusaghmr</p>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
 
-        <a
-          href="https://github.com/anusaghmr"
-          target="_blank"
-          class="social-card"
-          aria-label="GitHub"
-        >
-          <div class="social-icon">
-            <i class="fa-brands fa-github"></i>
-          </div>
-          <div>
-            <h4>GitHub</h4>
-            <p>@anusaghmr</p>
-          </div>
-          <span class="social-arrow">↗</span>
-        </a>
+          <a
+            href="https://www.linkedin.com/in/anusaghmr/"
+            target="_blank"
+            class="social-card"
+            aria-label="LinkedIn"
+          >
+            <div class="social-icon">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div>
+              <h4>LinkedIn</h4>
+              <p>/in/anusaghmr</p>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
 
-        <a
-          href="https://www.linkedin.com/in/anusaghmr/"
-          target="_blank"
-          class="social-card"
-          aria-label="LinkedIn"
-        >
-          <div class="social-icon">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </div>
-          <div>
-            <h4>LinkedIn</h4>
-            <p>/in/anusaghmr</p>
-          </div>
-          <span class="social-arrow">↗</span>
-        </a>
+          <a
+            href="https://medium.com/@anusaghmr/"
+            target="_blank"
+            class="social-card"
+            aria-label="Medium"
+          >
+            <div class="social-icon">
+              <i class="fa-brands fa-medium"></i>
+            </div>
+            <div>
+              <h4>Medium</h4>
+              <p>@anusaghmr</p>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+          <a
+            href="https://letterboxd.com/anusaghmr/"
+            target="_blank"
+            class="social-card"
+            aria-label="Letterboxd"
+          >
+            <div class="social-icon">
+              <i class="fa-brands fa-letterboxd"></i>
+            </div>
+            <div>
+              <h4>Letterboxd</h4>
+              <p>@anusaghmr</p>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
 
-        <a
-          href="https://medium.com/@anusaghmr/"
-          target="_blank"
-          class="social-card"
-          aria-label="Medium"
-        >
-          <div class="social-icon">
-            <i class="fa-brands fa-medium"></i>
-          </div>
-          <div>
-            <h4>Medium</h4>
-            <p>@anusaghmr</p>
-          </div>
-          <span class="social-arrow">↗</span>
-        </a>
-        <a
-          href="https://letterboxd.com/anusaghmr/"
-          target="_blank"
-          class="social-card"
-          aria-label="Letterboxd"
-        >
-          <div class="social-icon">
-            <i class="fa-brands fa-letterboxd"></i>
-          </div>
-          <div>
-            <h4>Letterboxd</h4>
-            <p>@anusaghmr</p>
-          </div>
-          <span class="social-arrow">↗</span>
-        </a>
-
-        <a
-          href="mailto:heyyanusha@gmail.com"
-          class="social-card"
-          aria-label="Email"
-        >
-          <div class="social-icon">
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-          <div>
-            <h4>Email</h4>
-            <p>heyyanusha@gmail.com</p>
-          </div>
-          <span class="social-arrow">↗</span>
-        </a>
-
-      </div>
+          <a
+            href="mailto:heyyanusha@gmail.com"
+            class="social-card"
+            aria-label="Email"
+          >
+            <div class="social-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>heyyanusha@gmail.com</p>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        </div>
       </div>
 
       <div class="footer-grid">
         <div>
           <h4>Anusha Ghimire</h4>
-            <div class="footer-links">
-              <a href="#story">About</a>
-              <a href="#works">Work</a>
-              <a href="#instagram">Instagram</a>
-              <a href="#contact">Contact</a>
-            </div>        
+          <div class="footer-links">
+            <a href="#story">About</a>
+            <a href="#works">Work</a>
+            <a href="#instagram">Instagram</a>
+            <a href="#contact">Contact</a>
           </div>
+        </div>
         <div>
           <h4>Contact details</h4>
           <p>anushaghimire00@gmail.com (ONLY FOR EMERGENCIES)</p>
@@ -1837,27 +2110,9 @@
           >
         </div>
         <div>
-          <h4>Socials</h4>
-          <p>Creator. AI Student. Public Speaker.</p>
+          <h4>Others</h4>
           <div class="socials">
-            <a
-              href="https://github.com/anusaghmr"
-              target="_blank"
-              aria-label="GitHub"
-              >GH</a
-            >
-            <a
-              href="https://www.instagram.com/madebyanusa/"
-              target="_blank"
-              aria-label="Instagram"
-              >IG</a
-            >
-            <a
-              href="https://linkedin.com/in/anusaghmr"
-              target="_blank"
-              aria-label="LinkedIn"
-              >in</a
-            >
+            <a href="../../shop/" target="_blank" aria-label="Shop">Shop </a>
           </div>
         </div>
       </div>
@@ -1867,31 +2122,66 @@
     </div>
     <!-- FLOATING CARD POPUP -->
 
-<div class="card-popup-widget" id="cardPopupWidget">
+    <div class="card-popup-widget" id="cardPopupWidget">
+      <div class="card-popup">
+        <button
+          class="card-popup-close"
+          type="button"
+          aria-label="Close digital card"
+        >
+          &times;
+        </button>
+        <iframe src="card.html" title="Anusha Ghimire Digital Card"></iframe>
+      </div>
 
-  <div class="card-popup">
-    <iframe
-      src="card.html"
-      title="Anusha Ghimire Digital Card"
-    ></iframe>
-  </div>
+      <button
+        class="card-popup-trigger"
+        aria-label="Open digital card"
+        onclick="toggleCardPopup()"
+      >
+        +
+      </button>
+    </div>
 
-  <button
-    class="card-popup-trigger"
-    aria-label="Open digital card"
-    onclick="toggleCardPopup()"
-  >
-    +
-  </button>
+    <script>
+      const body = document.body;
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+      const navToggle = document.querySelector(".nav-toggle");
+      const cardWidget = document.getElementById("cardPopupWidget");
 
-</div>
+      function setMenuOpen(open) {
+        mobileMenu.classList.toggle("open", open);
+        menuOverlay.classList.toggle("open", open);
+        body.classList.toggle("menu-open", open);
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      }
 
-<script>
-  function toggleCardPopup() {
-    document
-      .getElementById("cardPopupWidget")
-      .classList.toggle("open");
-  }
-</script>
+      function toggleCardPopup() {
+        const open = !cardWidget.classList.contains("open");
+        cardWidget.classList.toggle("open", open);
+        body.classList.toggle("card-open", open);
+      }
+
+      navToggle.addEventListener("click", () => setMenuOpen(true));
+      document
+        .querySelector(".mobile-menu-close")
+        .addEventListener("click", () => setMenuOpen(false));
+      menuOverlay.addEventListener("click", () => setMenuOpen(false));
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((link) =>
+          link.addEventListener("click", () => setMenuOpen(false)),
+        );
+      document
+        .querySelector(".card-popup-close")
+        .addEventListener("click", toggleCardPopup);
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        if (mobileMenu.classList.contains("open")) setMenuOpen(false);
+        if (cardWidget.classList.contains("open")) toggleCardPopup();
+      });
+    </script>
   </body>
 </html>
