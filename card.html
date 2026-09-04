@@ -86,7 +86,9 @@
       <span>Portfolio</span>
     </a>
   </div>
-  <button class="save-contact" onclick="saveContact()">SAVE CONTACT</button>
+  <button type="button" class="save-contact" onclick="saveContact()">
+    SAVE CONTACT
+  </button>
 </section>
 
 <style>
@@ -326,6 +328,22 @@
 </style>
 
 <script>
+  function downloadContact(blob) {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "Anusha-Ghimire.vcf";
+    link.target = "_blank";
+    link.rel = "noopener";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    window.setTimeout(() => URL.revokeObjectURL(url), 60000);
+  }
+
   function saveContact() {
     let photo = "";
 
@@ -378,27 +396,21 @@ END:VCARD`;
       navigator.canShare({ files: [file] })
     ) {
       try {
-        navigator.share({
-          title: "Anusha Ghimire",
-          text: "Contact details for Anusha Ghimire",
-          files: [file],
-        });
+        navigator
+          .share({
+            title: "Anusha Ghimire",
+            text: "Contact details for Anusha Ghimire",
+            files: [file],
+          })
+          .catch((error) => {
+            if (error.name !== "AbortError") downloadContact(blob);
+          });
         return;
       } catch (error) {
         if (error.name === "AbortError") return;
       }
     }
 
-    const url = URL.createObjectURL(blob);
-
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "Anusha-Ghimire.vcf";
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    URL.revokeObjectURL(url);
+    downloadContact(blob);
   }
 </script>

@@ -2029,6 +2029,20 @@
           font-size: 0.95rem !important;
         }
 
+        .card-popup-widget {
+          right: 16px !important;
+          bottom: max(16px, env(safe-area-inset-bottom)) !important;
+          z-index: 9999 !important;
+        }
+
+        .card-popup {
+          position: fixed !important;
+          inset: 10px 10px max(10px, env(safe-area-inset-bottom)) !important;
+          width: auto !important;
+          height: calc(100dvh - 88px) !important;
+          max-height: none !important;
+        }
+
         .services {
           grid-template-columns: 1fr 1fr !important;
         }
@@ -2253,6 +2267,20 @@
           object-position: center 20% !important;
 
           margin: 0 !important;
+        }
+
+        .card-popup-widget {
+          right: 12px !important;
+          bottom: max(12px, env(safe-area-inset-bottom)) !important;
+          z-index: 9999 !important;
+        }
+
+        .card-popup {
+          position: fixed !important;
+          inset: 8px 8px max(8px, env(safe-area-inset-bottom)) !important;
+          width: auto !important;
+          height: calc(100dvh - 72px) !important;
+          max-height: none !important;
         }
       }
     </style>
